@@ -91,9 +91,9 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 					model.getProperty(Constants.TESTALOD_ONTOLOGY_OLD_PREFIX + "hasInputTestDataCategory"));
 		}
-
-		if (!ni.hasNext()) {
-			throw new OWLUnitException("No input data category declared");
+		
+		if(!ni.hasNext()) {
+			return null;
 		}
 
 		String inputDataCategory = ni.next().asResource().getURI();

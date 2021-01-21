@@ -4,5 +4,5 @@
 
 ex:cq1.ttl a owlunit:CompetencyQuestionVerification .
 ex:cq1.ttl owlunit:hasCompetencyQuestion "What are the interests of a certain person?" .
-ex:cq1.ttl owlunit:hasSPARQLUnitTest "SELECT DISTINCT ?interest {?person foaf:interest ?interest}" .
+ex:cq1.ttl owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" .
 ex:cq1.ttl owlunit:testsOntology foaf: .

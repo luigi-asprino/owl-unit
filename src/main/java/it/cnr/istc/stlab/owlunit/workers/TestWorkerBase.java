@@ -20,12 +20,11 @@ public abstract class TestWorkerBase implements TestWorker {
 			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 					model.getProperty(Constants.TESTALOD_ONTOLOGY_PREFIX + "hasInputTestDataUri"));
 		}
-		
+
 		if (!ni.hasNext()) {
 			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 					model.getProperty(Constants.TESTALOD_ONTOLOGY_OLD_PREFIX + "hasInputTestDataUri"));
 		}
-
 
 		if (!ni.hasNext()) {
 			throw new OWLUnitException("No data input declared!");
@@ -37,6 +36,11 @@ public abstract class TestWorkerBase implements TestWorker {
 	protected Query getSPARQLQuery() throws OWLUnitException {
 		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 				model.getProperty(Constants.TESTANNOTATIONSCHEMA_HASSPARQLQUERYUNITTEST));
+
+		if (!ni.hasNext()) {
+			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
+					model.getProperty(Constants.OWLUNIT_HASSPARQLQUERYUNITTEST));
+		}
 
 		if (!ni.hasNext()) {
 			throw new OWLUnitException("No SPARQL query unit test declared");
