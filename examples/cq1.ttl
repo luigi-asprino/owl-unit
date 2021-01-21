@@ -1,0 +1,4 @@
+@prefix owlunit: <https://w3id.org/owlunit/ontology/>
+@prefix ex: <https://w3id.org/owlunit/examples/>
+
+ex:cq1.ttl a owlunit:CompetencyQuestionVerification .
