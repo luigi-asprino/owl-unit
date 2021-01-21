@@ -8,14 +8,11 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import it.cnr.istc.stlab.owlunit.Constants;
 
 public class TestSuiteExecutor {
 
-	private static final Logger logger = LoggerFactory.getLogger(TestSuiteExecutor.class);
 
 	private String iri;
 
