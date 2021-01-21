@@ -1,4 +1,4 @@
-@prefix owlunit: <https://w3id.org/owlunit/ontology/>
-@prefix ex: <https://w3id.org/owlunit/examples/>
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/>
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/>
 
 ex:cq1.ttl a owlunit:CompetencyQuestionVerification .
