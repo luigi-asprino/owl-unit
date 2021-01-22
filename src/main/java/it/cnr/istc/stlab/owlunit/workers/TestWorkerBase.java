@@ -1,13 +1,20 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.OWL;
+import org.apache.jena.vocabulary.RDF;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +23,7 @@ import it.cnr.istc.stlab.owlunit.Constants;
 public abstract class TestWorkerBase implements TestWorker {
 
 	protected String testCaseIRI;
-	protected Model model=ModelFactory.createDefaultModel();
+	protected Model model = ModelFactory.createDefaultModel();
 	protected String fileIn;
 
 	private Logger logger = LoggerFactory.getLogger(TestWorkerBase.class);
@@ -108,7 +115,7 @@ public abstract class TestWorkerBase implements TestWorker {
 
 		return ni.next().asResource().getURI();
 	}
-	
+
 	protected String getExpectedResult() throws OWLUnitException {
 		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 				model.getProperty(Constants.TESTANNOTATIONSCHEMA_HASEXPECTEDRESULT));
@@ -124,6 +131,36 @@ public abstract class TestWorkerBase implements TestWorker {
 
 		return ni.next().asLiteral().getString();
 
+	}
+
+	public static List<TestWorker> guessTestClass(String iri) throws OWLUnitException {
+		Model model = ModelFactory.createDefaultModel();
+		RDFDataMgr.read(model, iri);
+
+		List<TestWorker> result = new ArrayList<>();
+
+		StmtIterator it2 = model.getResource(iri).listProperties(RDF.type);
+		while (it2.hasNext()) {
+			Statement s2 = (Statement) it2.next();
+			result.add(getTest(s2.getSubject().asResource(), s2.getObject().asResource()));
+		}
+
+		return result;
+	}
+
+	private static TestWorker getTest(Resource iriTestCase, Resource klass) throws OWLUnitException {
+		if (klass.getURI().equals(Constants.CQVERIFICATION)) {
+			CompetencyQuestionVerificationExecutor cqtw = new CompetencyQuestionVerificationExecutor(
+					iriTestCase.getURI());
+			return cqtw;
+		} else if (klass.getURI().equals(Constants.ERRORPROVOCATION)) {
+			ErrorProvocationTestExecutor cqtw = new ErrorProvocationTestExecutor(iriTestCase.getURI());
+			return cqtw;
+		} else if (klass.getURI().equals(Constants.INFERENCEVERIFICATION)) {
+			InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(iriTestCase.getURI());
+			return te;
+		}
+		throw new OWLUnitException("Unrecognized test case! class: " + klass.getURI());
 	}
 
 }
