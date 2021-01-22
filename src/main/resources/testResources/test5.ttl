@@ -1,0 +1,12 @@
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+owlunittest:test5 a owlunit:CompetencyQuestionVerification ;
+ 	owlunit:hasCompetencyQuestion "What are the interests of a certain person?" ;
+ 	owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
+	owlunit:hasInputData <http://localhost:3000/test/query> ;
+	owlunit:hasInputTestDataCategory owlunit:SPARQLEndpoint ;
+	owlunit:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball\" } } ] } }";
+	owlunit:testsOntology foaf: .

@@ -11,6 +11,9 @@ public class Constants {
 	public static final String TESTANNOTATIONSCHEMA_HASEXPECTEDRESULT = TESTANNOTATIONSCCHEMA_PREFIX
 			+ "hasExpectedResult";
 	public static final String OWLUNIT_HASSPARQLQUERYUNITTEST = OWLUNIT_ONTOLOGY_PREFIX + "hasSPARQLUnitTest";
+	public static final String OWLUNIT_TESTSONTOLOGY= OWLUNIT_ONTOLOGY_PREFIX + "testsOntology";
+	public static final String OWLUNIT_HASEXPECTEDRESULT = OWLUNIT_ONTOLOGY_PREFIX
+			+ "hasExpectedResult";
 
 	public static final String SPARQLENDPOINT_DATACATEGORY_OLD = TESTALOD_ONTOLOGY_OLD_PREFIX + "SPARQLendpoint";
 	public static final String SPARQLENDPOINT_DATACATEGORY = OWLUNIT_ONTOLOGY_PREFIX + "SPARQLEndpoint";

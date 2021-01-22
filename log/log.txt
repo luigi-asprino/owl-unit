@@ -2975,3 +2975,1168 @@ DEBUG 2021-01-21 18:43:23,077 [main] (QueryElementVisitorPrototyper.java:169) - 
  INFO 2021-01-21 18:50:41,637 [main] (TestSuiteExecutor.java:38) - https://w3id.org/arco/test/CQ/CQ_BNB1111.owl	false
  INFO 2021-01-21 18:50:43,304 [main] (TestSuiteExecutor.java:38) - https://w3id.org/arco/test/CQ/CQ_BNB1.owl	true
  INFO 2021-01-21 18:53:35,567 [main] (OWLUnit.java:34) - Test suite URI https://w3id.org/arco/test/testsuite.ttl
+DEBUG 2021-01-21 23:04:50,062 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?person @http://xmlns.com/foaf/0.1/interest ?interest
+TRACE 2021-01-22 08:37:31,131 [main] (CompetencyQuestionVerificationExecutor.java:49) - Number of triples in test case 4
+TRACE 2021-01-22 08:37:31,171 [main] (CompetencyQuestionVerificationExecutor.java:54) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:37:32,006 [main] (CompetencyQuestionVerificationExecutor.java:49) - Number of triples in test case 4
+TRACE 2021-01-22 08:37:32,007 [main] (CompetencyQuestionVerificationExecutor.java:54) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:37:32,171 [main] (CompetencyQuestionVerificationExecutor.java:49) - Number of triples in test case 3
+TRACE 2021-01-22 08:37:32,174 [main] (CompetencyQuestionVerificationExecutor.java:49) - Number of triples in test case 5
+TRACE 2021-01-22 08:37:32,175 [main] (CompetencyQuestionVerificationExecutor.java:54) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:38:56,205 [main] (CompetencyQuestionVerificationExecutor.java:44) - Loaded using IRI https://w3id.org/arco/test/CQ/CQ_BNB1111.owl
+TRACE 2021-01-22 08:38:57,352 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 11
+TRACE 2021-01-22 08:38:57,357 [main] (CompetencyQuestionVerificationExecutor.java:138) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 08:38:57,358 [main] (CompetencyQuestionVerificationExecutor.java:54) - Input TOY_DATASET
+TRACE 2021-01-22 08:38:57,395 [main] (CompetencyQuestionVerificationExecutor.java:57) - SPARQL query: PREFIX  a-dd: <https://w3id.org/arco/denotative-description/>
+PREFIX  a-cd: <https://w3id.org/arco/context-description/>
+PREFIX  a-mp: <https://w3id.org/arco/movable-property/>
+PREFIX  a-ip: <https://w3id.org/arco/immovable-property/>
+
+SELECT  ?cp ?bt
+WHERE
+  { ?cp  a-mp:isClassifiedBy  ?bt .
+    ?bt  a                    a-mp:Cultivar
+  }
+
+TRACE 2021-01-22 08:38:57,397 [main] (CompetencyQuestionVerificationExecutor.java:89) - Expected result: {
+  "head": {
+    "vbt": [
+      "cp",
+      "bt"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "cp": {
+          "type": "uri",
+          "value": "https://github.com/ICCD-MiBACT/ArCo/tree/master/ArCo-release/test/CQ/ToyDatasets/BNB1.ttl#Specimen1"
+        },
+        "bt": {
+          "type": "uri",
+          "value": "https://github.com/ICCD-MiBACT/ArCo/tree/master/ArCo-release/test/CQ/ToyDatasets/BNB1.ttl#BiologicalTaxon1"
+        }
+      },
+      {
+        "cp": {
+          "type": "uri",
+          "value": "https://github.com/ICCD-MiBACT/ArCo/tree/master/ArCo-release/test/CQ/ToyDatasets/BNB1.ttl#Specimen3"
+        },
+        "bt": {
+          "type": "uri",
+          "value": "https://github.com/ICCD-MiBACT/ArCo/tree/master/ArCo-release/test/CQ/ToyDatasets/BNB1.ttl#BiologicalTaxon3"
+        }
+      }
+    ]
+  }
+}
+TRACE 2021-01-22 08:38:57,397 [main] (CompetencyQuestionVerificationExecutor.java:92) - SPARQL endpoint: https://w3id.org/arco/test/CQ/ToyDatasets/Toyset_BNB1.ttl
+TRACE 2021-01-22 08:38:57,397 [main] (CompetencyQuestionVerificationExecutor.java:101) - TOY https://w3id.org/arco/test/CQ/ToyDatasets/Toyset_BNB1.ttl
+TRACE 2021-01-22 08:38:57,819 [main] (CompetencyQuestionVerificationExecutor.java:109) - Actual { "head": {
+    "vars": [ "cp" , "bt" ]
+  } ,
+  "results": {
+    "bindings": [
+      
+    ]
+  }
+}
+
+TRACE 2021-01-22 08:39:12,939 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:39:12,978 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:39:12,986 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:39:12,989 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:39:12,991 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:39:12,994 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:39:12,995 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:39:12,998 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 5
+TRACE 2021-01-22 08:39:46,885 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:39:46,927 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:39:46,967 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:39:47,789 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:39:47,792 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:39:47,793 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:39:47,957 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:39:47,959 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:39:47,960 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:39:47,963 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 5
+TRACE 2021-01-22 08:39:47,964 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:40:32,357 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:40:32,393 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:40:32,434 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:40:33,221 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:40:33,224 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:40:33,225 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:40:33,389 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:40:33,391 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:40:33,392 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+ERROR 2021-01-22 08:40:33,394 [main] (ErrorHandlerFactory.java:106) - [line: 10, col: 56] Triples not terminated by DOT
+TRACE 2021-01-22 08:40:41,210 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:40:41,249 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:40:41,288 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:40:42,091 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:40:42,093 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:40:42,094 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:40:42,272 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:40:42,274 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:40:42,275 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+ERROR 2021-01-22 08:40:42,277 [main] (ErrorHandlerFactory.java:106) - [line: 10, col: 56] Triples not terminated by DOT
+TRACE 2021-01-22 08:40:56,752 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:40:56,795 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:40:56,835 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:40:57,642 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:40:57,644 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:40:57,646 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:40:57,820 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:40:57,823 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:40:57,824 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:40:57,827 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 6
+TRACE 2021-01-22 08:40:57,827 [main] (CompetencyQuestionVerificationExecutor.java:140) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:40:57,828 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:40:57,829 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:42:46,933 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:42:46,970 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:42:47,010 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:42:47,815 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:42:47,817 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:42:47,819 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:42:47,984 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:42:47,986 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:42:47,987 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:42:47,989 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:42:47,989 [main] (CompetencyQuestionVerificationExecutor.java:140) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:42:47,990 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:42:47,991 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:42:48,132 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: 
+TRACE 2021-01-22 08:43:43,122 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:43:43,163 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:43:43,204 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:43:44,028 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:43:44,030 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:43:44,031 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:43:44,197 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:43:44,200 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:43:44,200 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:43:44,203 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:43:44,203 [main] (CompetencyQuestionVerificationExecutor.java:140) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:43:44,204 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:43:44,205 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:43:44,345 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: 
+TRACE 2021-01-22 08:44:02,521 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:44:02,559 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:44:02,598 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:44:03,396 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:44:03,399 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:44:03,400 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:44:03,570 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:44:03,573 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:44:03,574 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:44:03,576 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:44:03,577 [main] (CompetencyQuestionVerificationExecutor.java:140) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:44:03,577 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:44:03,578 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:44:03,721 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: 
+TRACE 2021-01-22 08:44:03,721 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:44:03,722 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:44:42,125 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:44:42,164 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:44:42,206 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:44:43,002 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:44:43,004 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:44:43,005 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:44:43,174 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:44:43,176 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:44:43,177 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:44:43,179 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:44:43,179 [main] (CompetencyQuestionVerificationExecutor.java:140) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:44:43,180 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:44:43,181 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:44:43,325 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: 
+TRACE 2021-01-22 08:44:43,325 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:44:43,326 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:44:43,413 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 08:45:59,612 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:45:59,651 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:45:59,691 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:46:00,504 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:46:00,506 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:46:00,508 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:46:00,678 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:46:00,681 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:46:00,681 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:46:00,684 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:46:00,684 [main] (CompetencyQuestionVerificationExecutor.java:140) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:46:00,685 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:46:00,686 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:46:00,829 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head ": {  "vars ": [  "interest " ] } ,  "results ": {  "bindings ": [ {  "interest ": {  "type ":  "uri " ,  "value ":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball " } } ] } }
+TRACE 2021-01-22 08:46:00,830 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:46:00,830 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:46:00,920 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 08:46:44,001 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:46:44,036 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:46:44,073 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:46:44,877 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:46:44,880 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:46:44,881 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:46:45,056 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:46:45,058 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:46:45,058 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:46:45,061 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:46:45,061 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:46:45,062 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:46:45,063 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:46:45,224 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head ": {  "vars ": [  "interest " ] } ,  "results ": {  "bindings ": [ {  "interest ": {  "type ":  "uri " ,  "value ":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball " } } ] } }
+TRACE 2021-01-22 08:46:45,225 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:46:45,225 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:46:45,309 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 08:46:45,310 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head ": {  "vars ": [  "interest " ] } ,  "results ": {  "bindings ": [ {  "interest ": {  "type ":  "uri " ,  "value ":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball " } } ] } }
+TRACE 2021-01-22 08:47:26,042 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:47:26,079 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:47:26,113 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:47:26,880 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:47:26,882 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:47:26,883 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:47:27,173 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:47:27,176 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:47:27,176 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:47:27,179 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:47:27,179 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:47:27,180 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:47:27,181 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:47:27,323 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings ": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 08:47:27,323 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:47:27,324 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:47:27,410 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 08:47:27,410 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings ": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 08:47:38,579 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 08:47:38,617 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:47:38,655 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:47:39,451 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 08:47:39,453 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 08:47:39,454 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 08:47:39,624 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 08:47:39,626 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 08:47:39,626 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 08:47:39,628 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 08:47:39,629 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 08:47:39,630 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 08:47:39,630 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 08:47:39,781 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 08:47:39,782 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:47:39,782 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 08:47:39,864 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 08:47:39,864 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:20:23,885 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:20:23,919 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:20:23,964 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:20:24,780 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:20:24,783 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:20:24,784 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:20:24,952 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:20:24,954 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:20:24,955 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:20:24,958 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:20:24,959 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:20:24,959 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:20:24,960 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:20:25,106 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:20:25,107 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:20:25,107 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:20:25,197 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:20:25,197 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:21:12,989 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:21:13,022 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:21:13,069 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:21:13,835 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:21:13,837 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:21:13,838 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:21:14,007 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:21:14,009 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:21:14,010 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:21:14,013 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:21:14,013 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:21:14,014 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:21:14,015 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:21:14,159 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:21:14,159 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:21:14,159 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:21:14,238 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:21:14,239 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:21:14,485 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:21:14,488 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:21:14,488 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:21:14,488 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:21:14,489 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:21:14,767 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:21:14,768 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:21:14,768 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY http://localhost:3000/test/query
+TRACE 2021-01-22 09:27:45,217 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:27:45,228 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:27:45,234 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:27:45,235 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:27:45,269 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:27:46,049 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:27:46,049 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:27:46,050 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY http://localhost:3000/test/query
+TRACE 2021-01-22 09:28:36,731 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:28:36,741 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:28:36,747 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:28:36,747 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:28:36,782 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:28:45,607 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:28:45,619 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:28:45,625 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:28:45,626 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:28:45,663 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:28:46,463 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:28:46,464 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:28:46,464 [main] (CompetencyQuestionVerificationExecutor.java:99) - SPARQL
+TRACE 2021-01-22 09:28:46,614 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:28:46,614 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:29:54,598 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:29:54,632 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:29:54,677 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:29:55,434 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:29:55,436 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:29:55,437 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:29:55,601 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:29:55,603 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:29:55,604 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:29:55,607 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:29:55,607 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:29:55,608 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:29:55,609 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:29:55,754 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:29:55,755 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:29:55,755 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:29:55,839 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:29:55,840 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:29:56,982 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:29:56,988 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:29:56,989 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:29:56,990 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:29:56,991 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:29:57,274 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:29:57,274 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:29:57,274 [main] (CompetencyQuestionVerificationExecutor.java:99) - SPARQL
+TRACE 2021-01-22 09:29:57,361 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:29:57,361 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:35,694 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:37:35,729 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:37:35,772 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:36,569 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:37:36,572 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:37:36,573 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:37:36,734 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:37:36,735 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:37:36,736 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:37:36,738 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:37:36,739 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:37:36,739 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:37:36,740 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:36,882 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:36,883 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:37:36,883 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:37:36,967 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:37:36,967 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:38,119 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:37:38,128 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:37:38,129 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:37:38,129 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:37:38,131 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:38,404 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:38,404 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:37:38,405 [main] (CompetencyQuestionVerificationExecutor.java:99) - SPARQL
+TRACE 2021-01-22 09:37:38,490 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:37:38,490 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:38,499 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test6.ttl
+TRACE 2021-01-22 09:37:38,501 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 6
+TRACE 2021-01-22 09:37:53,358 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:37:53,394 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:37:53,444 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:54,223 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:37:54,225 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:37:54,227 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:37:54,385 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:37:54,387 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:37:54,388 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:37:54,391 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:37:54,391 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:37:54,392 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:37:54,393 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:54,532 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:54,532 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:37:54,533 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:37:54,616 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:37:54,616 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:55,759 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:37:55,764 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:37:55,765 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:37:55,765 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:37:55,767 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:56,033 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:56,033 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:37:56,033 [main] (CompetencyQuestionVerificationExecutor.java:99) - SPARQL
+TRACE 2021-01-22 09:37:56,122 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:37:56,122 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:56,131 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test6.ttl
+TRACE 2021-01-22 09:37:56,133 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 6
+TRACE 2021-01-22 09:37:56,133 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 09:37:56,133 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:37:56,134 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:37:56,135 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:37:56,135 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:37:56,135 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:37:56,137 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:37:56,137 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:24,435 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:38:24,468 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:38:24,514 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:25,278 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:38:25,281 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:38:25,282 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:38:25,551 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:38:25,554 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:38:25,554 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:38:25,556 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:38:25,557 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:38:25,558 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:38:25,558 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:25,714 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:25,715 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:38:25,715 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:38:25,797 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:38:25,797 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:26,941 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:38:26,947 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:38:26,948 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:38:26,949 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:38:26,950 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:27,216 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:27,216 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:38:27,216 [main] (CompetencyQuestionVerificationExecutor.java:99) - SPARQL
+TRACE 2021-01-22 09:38:27,306 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:38:27,306 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:27,316 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test6.ttl
+TRACE 2021-01-22 09:38:27,317 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 5
+TRACE 2021-01-22 09:38:27,318 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 09:38:27,318 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:38:27,318 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:27,319 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:27,319 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:38:27,319 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:38:27,321 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:38:27,321 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:42,930 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 09:38:42,964 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:38:43,013 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:43,791 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 09:38:43,793 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:38:43,794 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 09:38:43,950 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 09:38:43,952 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 3
+TRACE 2021-01-22 09:38:43,953 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 09:38:43,955 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:38:43,955 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:38:43,956 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:38:43,957 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:44,094 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:44,095 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:38:44,095 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 09:38:44,181 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:38:44,181 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:45,325 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 09:38:45,333 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:38:45,333 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 09:38:45,334 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 09:38:45,336 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:45,603 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:45,603 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: http://localhost:3000/test/query
+TRACE 2021-01-22 09:38:45,603 [main] (CompetencyQuestionVerificationExecutor.java:99) - SPARQL
+TRACE 2021-01-22 09:38:45,686 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:38:45,686 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:45,696 [main] (CompetencyQuestionVerificationExecutor.java:47) - Loaded using path src/main/resources/testResources/test6.ttl
+TRACE 2021-01-22 09:38:45,698 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 5
+TRACE 2021-01-22 09:38:45,698 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 09:38:45,698 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:38:45,699 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:38:45,700 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:38:45,700 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test6.ttl
+TRACE 2021-01-22 09:38:45,700 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test6.ttl
+TRACE 2021-01-22 09:38:45,702 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:38:45,702 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:45:36,951 [main] (CompetencyQuestionVerificationExecutor.java:44) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl
+TRACE 2021-01-22 09:45:37,433 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:45:37,471 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:45:58,760 [main] (CompetencyQuestionVerificationExecutor.java:44) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl
+TRACE 2021-01-22 09:45:59,207 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 4
+TRACE 2021-01-22 09:45:59,243 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:50:12,372 [main] (CompetencyQuestionVerificationExecutor.java:44) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl
+TRACE 2021-01-22 09:50:13,066 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 09:50:13,069 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 09:50:13,070 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 09:50:13,101 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 09:50:13,673 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 09:50:13,674 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 09:50:13,674 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 09:50:13,977 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 09:50:13,977 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 10:00:16,488 [main] (CompetencyQuestionVerificationExecutor.java:44) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl
+TRACE 2021-01-22 10:00:17,218 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 7
+TRACE 2021-01-22 10:00:17,222 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 10:00:17,222 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 10:00:17,254 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 10:00:17,840 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 10:00:17,840 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 10:00:17,841 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 10:00:18,203 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 10:00:18,203 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 10:00:18,216 [main] (CompetencyQuestionVerificationExecutor.java:44) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1-testalod.ttl
+TRACE 2021-01-22 10:00:18,470 [main] (CompetencyQuestionVerificationExecutor.java:51) - Number of triples in test case 5
+TRACE 2021-01-22 10:00:18,471 [main] (CompetencyQuestionVerificationExecutor.java:141) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 10:00:18,471 [main] (CompetencyQuestionVerificationExecutor.java:55) - Input TOY_DATASET
+TRACE 2021-01-22 10:00:18,472 [main] (CompetencyQuestionVerificationExecutor.java:59) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 10:00:18,473 [main] (CompetencyQuestionVerificationExecutor.java:91) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 10:00:18,475 [main] (CompetencyQuestionVerificationExecutor.java:94) - SPARQL endpoint: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 10:00:18,475 [main] (CompetencyQuestionVerificationExecutor.java:103) - TOY https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 10:00:18,527 [main] (CompetencyQuestionVerificationExecutor.java:111) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 10:00:18,528 [main] (CompetencyQuestionVerificationExecutor.java:112) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }

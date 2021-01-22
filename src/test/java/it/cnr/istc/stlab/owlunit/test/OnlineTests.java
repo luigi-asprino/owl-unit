@@ -8,10 +8,21 @@ import it.cnr.istc.stlab.owlunit.workers.CompetencyQuestionVerificationExecutor;
 import it.cnr.istc.stlab.owlunit.workers.OWLUnitException;
 
 public class OnlineTests {
-	
+
 	@Test
 	public void test1() {
 		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void test2() {
+		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1-testalod.ttl";
 		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
 		try {
 			assertTrue(cqve.runTest());

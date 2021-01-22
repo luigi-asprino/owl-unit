@@ -2,6 +2,7 @@ package it.cnr.istc.stlab.owlunit.workers;
 
 import java.io.ByteArrayOutputStream;
 
+import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -22,6 +23,7 @@ import it.cnr.istc.stlab.owlunit.Constants;
 public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 	private static final Logger logger = LoggerFactory.getLogger(CompetencyQuestionVerificationExecutor.class);
+	private String fileIn;
 
 	private enum Input {
 		SPARQL_ENDPOINT, TOY_DATASET
@@ -33,19 +35,57 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 		super.model = ModelFactory.createDefaultModel();
 	}
 
+	public void setFileIn(String fi) {
+		this.fileIn = fi;
+	}
+
 	public boolean runTest() throws OWLUnitException {
-		RDFDataMgr.read(model, testCaseIRI);
+		if (fileIn == null) {
+			logger.trace("Loaded using IRI {}", testCaseIRI);
+			RDFDataMgr.read(model, testCaseIRI);
+		} else {
+			logger.trace("Loaded using path {}", fileIn);
+			RDFDataMgr.read(model, fileIn);
+		}
 
 		logger.trace("Number of triples in test case " + model.size());
 
 		Input i = getInputType();
+		if (i != null) {
+			logger.trace("Input {}", i.toString());
+		}
 
 		Query sparqlQuery = getSPARQLQuery();
 		logger.trace("SPARQL query: " + sparqlQuery.toString(Syntax.syntaxSPARQL_11));
 
-		if (i == null) {
-			throw new OWLUnitException("No input type provided!");
-		} else {
+		OntModel om = getTestedOntology();
+		if (om != null) {
+			QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(om);
+			sparqlQuery.getQueryPattern().visit(qeviev);
+			if (!qeviev.getResult()) {
+				return false;
+			}
+//			QueryElementVisitorPrototyper qevp = new QueryElementVisitorPrototyper();
+//			sparqlQuery.getQueryPattern().visit(qevp);
+//			Model m = ModelFactory.createModelForGraph(qevp.getGraph());
+//			om.add(m);
+//
+//			OntologyManager manager = OntManagers.createManager();
+//			Ontology ontology = manager.addOntology(om.getGraph());
+//
+//			Configuration c = new Configuration();
+//			c.ignoreUnsupportedDatatypes = true;
+//			OWLReasoner reasoner = new org.semanticweb.HermiT.ReasonerFactory().createReasoner(ontology, c);
+//
+//			boolean consistent = reasoner.isConsistent();
+//
+//			if (!consistent) {
+//				return false;
+//			}
+
+		}
+
+		if (i != null) {
 
 			String expectedResult = getExpectedResult().replaceAll("\\\\\"", "\"");
 			logger.trace("Expected result: " + expectedResult);
@@ -69,13 +109,14 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 			ResultSetFormatter.outputAsJSON(baos, qexec.execSelect());
 
 			logger.trace("Actual " + baos.toString());
+			logger.trace("Expected " + expectedResult);
 
 			JsonElement expected = JsonParser.parseString(expectedResult);
 			JsonElement actual = JsonParser.parseString(baos.toString());
 			return expected.equals(actual);
 
 		}
-
+		return true;
 	}
 
 	private Input getInputType() throws OWLUnitException {
@@ -91,8 +132,8 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 					model.getProperty(Constants.TESTALOD_ONTOLOGY_OLD_PREFIX + "hasInputTestDataCategory"));
 		}
-		
-		if(!ni.hasNext()) {
+
+		if (!ni.hasNext()) {
 			return null;
 		}
 
@@ -115,20 +156,17 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 	private String getExpectedResult() throws OWLUnitException {
 		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 				model.getProperty(Constants.TESTANNOTATIONSCHEMA_HASEXPECTEDRESULT));
+		
+		if (!ni.hasNext()) {
+			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
+					model.getProperty(Constants.OWLUNIT_HASEXPECTEDRESULT));
+		}
 
 		if (!ni.hasNext()) {
 			throw new OWLUnitException("No expected result declared");
 		}
 
 		return ni.next().asLiteral().getString();
-
-	}
-
-	public static void main(String[] args) throws OWLUnitException {
-		CompetencyQuestionVerificationExecutor cqw = new CompetencyQuestionVerificationExecutor(
-				"https://w3id.org/arco/test/CQ/CQ_BNB1111.owl");
-
-		System.out.println(cqw.runTest());
 
 	}
 
