@@ -1,0 +1,10 @@
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+
+<testSuiteExecutor1.ttl> a owlunit:TestSuite ;
+	owlunit:hasTestCase <testSuiteExecutor-test1.ttl> ;
+	owlunit:hasTestCase <testSuiteExecutor-test2.ttl> ;
+	owlunit:hasTestCase <testSuiteExecutor-test3.ttl>  .
+
+<testSuiteExecutor-test1.ttl>  a owlunit:CompetencyQuestionVerification .
+<testSuiteExecutor-test3.ttl>  a owlunit:InferenceVerification .
+<testSuiteExecutor-test2.ttl>  a owlunit:ErrorProvocation .

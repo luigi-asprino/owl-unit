@@ -1,0 +1,3 @@
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+
+owlunittest:i a owlunittest:B .

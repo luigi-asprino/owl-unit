@@ -1,5 +1,11 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -18,6 +24,25 @@ import org.slf4j.LoggerFactory;
 public class Utils {
 
 	private static final Logger logger = LoggerFactory.getLogger(Utils.class);
+
+	public static URI resolveLocation(String urlLocation) throws URISyntaxException {
+		try {
+			return new URL(urlLocation).toURI();
+		} catch (MalformedURLException u) {
+			logger.trace("Malformed url interpreting as file");
+			return new File(urlLocation).toURI();
+		}
+	}
+
+	public static String resolveLocationString(String urlLocation) throws URISyntaxException {
+		try {
+			return new URL(urlLocation).toURI().toString().replace("file:/", "file:///");
+		} catch (MalformedURLException u) {
+			logger.trace("Malformed url interpreting as file");
+			return new File(urlLocation).toURI().toString().replace("file:/", "file:///");
+		}
+	}
+
 	static boolean checkConsistency(String iriTestCase) throws OWLOntologyCreationException {
 
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();

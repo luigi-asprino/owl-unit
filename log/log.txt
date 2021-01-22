@@ -5006,3 +5006,351 @@ TRACE 2021-01-22 13:24:49,601 [main] (ErrorProvocationTestExecutor.java:61) - Lo
 TRACE 2021-01-22 13:24:49,901 [main] (ErrorProvocationTestExecutor.java:65) - Importing Optional.empty
 TRACE 2021-01-22 13:24:49,902 [main] (ErrorProvocationTestExecutor.java:68) - Toy dataset axioms 2
 TRACE 2021-01-22 13:24:49,902 [main] (ErrorProvocationTestExecutor.java:73) - Ontology axioms 1495
+ERROR 2021-01-22 15:16:57,236 [main] (ErrorHandlerFactory.java:106) - [line: 5, col: 79] Undefined prefix: Resources
+ERROR 2021-01-22 15:17:33,373 [main] (ErrorHandlerFactory.java:106) - [line: 4, col: 84] Undefined prefix: Resources
+TRACE 2021-01-22 15:26:25,301 [main] (TestSuiteExecutor.java:29) - IRI Executor model size 7
+TRACE 2021-01-22 15:27:43,244 [main] (TestSuiteExecutor.java:29) - IRI Executor model size 7
+TRACE 2021-01-22 15:27:43,248 [main] (TestSuiteExecutor.java:31) - Number of test cases 0
+TRACE 2021-01-22 15:28:39,191 [main] (TestSuiteExecutor.java:29) - IRI Executor model size 7
+TRACE 2021-01-22 15:28:39,196 [main] (TestSuiteExecutor.java:31) - Number of test cases 0
+TRACE 2021-01-22 16:11:13,840 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:11:13,889 [main] (TestSuiteExecutor.java:33) - IRI Executor model size 7
+TRACE 2021-01-22 16:11:13,898 [main] (TestSuiteExecutor.java:35) - Number of test cases 0
+TRACE 2021-01-22 16:11:51,485 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:11:51,489 [main] (TestSuiteExecutor.java:32) - Location file:/Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 16:11:51,528 [main] (TestSuiteExecutor.java:35) - IRI Executor model size 7
+TRACE 2021-01-22 16:11:51,532 [main] (TestSuiteExecutor.java:37) - Number of test cases 0
+TRACE 2021-01-22 16:13:06,531 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:13:06,534 [main] (TestSuiteExecutor.java:32) - Location file:/Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 16:13:06,586 [main] (TestSuiteExecutor.java:35) - IRI Executor model size 7
+TRACE 2021-01-22 16:13:06,590 [main] (TestSuiteExecutor.java:37) - Number of test cases 0
+TRACE 2021-01-22 16:14:12,718 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:14:12,722 [main] (TestSuiteExecutor.java:33) - Location file:/Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 16:14:12,755 [main] (TestSuiteExecutor.java:36) - IRI Executor model size 7
+TRACE 2021-01-22 16:14:12,758 [main] (TestSuiteExecutor.java:38) - Number of test cases 0
+TRACE 2021-01-22 16:27:20,550 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:27:44,627 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:28:45,770 [main] (Utils.java:32) - Malformed url interpreting as file
+TRACE 2021-01-22 16:36:45,307 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 16:37:12,736 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 16:37:12,740 [main] (TestSuiteExecutor.java:33) - Location file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 16:37:12,778 [main] (TestSuiteExecutor.java:36) - IRI Executor model size 7
+TRACE 2021-01-22 16:37:12,788 [main] (TestSuiteExecutor.java:38) - Number of test cases 3
+TRACE 2021-01-22 16:38:04,605 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 16:38:04,608 [main] (TestSuiteExecutor.java:33) - Location file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 16:38:04,654 [main] (TestSuiteExecutor.java:36) - IRI Executor model size 7
+TRACE 2021-01-22 16:38:04,658 [main] (TestSuiteExecutor.java:44) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 16:38:04,659 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 16:38:04,665 [main] (InferenceVerificationTestExecutor.java:40) - Ontology IRI to test null
+TRACE 2021-01-22 16:38:04,916 [main] (TestSuiteExecutor.java:44) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 16:38:04,917 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 16:38:04,920 [main] (ErrorProvocationTestExecutor.java:28) - Ontology IRI to test null
+TRACE 2021-01-22 16:38:04,923 [main] (TestSuiteExecutor.java:44) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 16:38:04,924 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 16:38:04,927 [main] (CompetencyQuestionVerificationExecutor.java:40) - Number of triples in test case 4
+TRACE 2021-01-22 18:13:40,330 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 18:13:40,333 [main] (TestSuiteExecutor.java:33) - Location file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 18:13:40,387 [main] (TestSuiteExecutor.java:36) - IRI Executor model size 7
+TRACE 2021-01-22 18:13:40,392 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:13:40,394 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:13:40,400 [main] (InferenceVerificationTestExecutor.java:42) - Ontology IRI to test null
+TRACE 2021-01-22 18:13:40,693 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 18:13:40,694 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 18:13:40,697 [main] (ErrorProvocationTestExecutor.java:30) - Ontology IRI to test null
+TRACE 2021-01-22 18:13:40,701 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 18:13:40,702 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 18:13:40,706 [main] (CompetencyQuestionVerificationExecutor.java:40) - Number of triples in test case 4
+TRACE 2021-01-22 18:13:54,919 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 18:13:54,923 [main] (TestSuiteExecutor.java:33) - Location file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 18:13:54,980 [main] (TestSuiteExecutor.java:36) - IRI Executor model size 7
+TRACE 2021-01-22 18:13:54,986 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:13:54,988 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:13:54,994 [main] (InferenceVerificationTestExecutor.java:42) - Ontology IRI to test null
+TRACE 2021-01-22 18:13:55,292 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 18:13:55,293 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 18:13:55,296 [main] (ErrorProvocationTestExecutor.java:30) - Ontology IRI to test null
+TRACE 2021-01-22 18:13:55,301 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 18:13:55,303 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 18:13:55,306 [main] (CompetencyQuestionVerificationExecutor.java:40) - Number of triples in test case 4
+TRACE 2021-01-22 18:18:15,832 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test7.ttl
+TRACE 2021-01-22 18:18:15,884 [main] (InferenceVerificationTestExecutor.java:42) - Ontology IRI to test file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testOntologies/test7.ttl
+TRACE 2021-01-22 18:18:16,508 [main] (InferenceVerificationTestExecutor.java:53) - Importing Optional.empty
+TRACE 2021-01-22 18:18:16,510 [main] (InferenceVerificationTestExecutor.java:57) - Ontology axioms 2
+TRACE 2021-01-22 18:18:16,511 [main] (InferenceVerificationTestExecutor.java:60) - inputTestData: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test7.ttl
+TRACE 2021-01-22 18:18:16,511 [main] (InferenceVerificationTestExecutor.java:63) - Loading input data
+TRACE 2021-01-22 18:18:16,526 [main] (InferenceVerificationTestExecutor.java:67) - Importing Optional.empty
+TRACE 2021-01-22 18:18:16,526 [main] (InferenceVerificationTestExecutor.java:70) - Toy dataset axioms 1
+TRACE 2021-01-22 18:18:16,527 [main] (InferenceVerificationTestExecutor.java:75) - Ontology axioms 3
+TRACE 2021-01-22 18:18:17,111 [main] (InferenceVerificationTestExecutor.java:101) - SPARQL query: PREFIX  owlunittest: <https://w3id.org/OWLunit/test/>
+
+ASK
+WHERE
+  { owlunittest:i
+              a  owlunittest:A
+  }
+
+TRACE 2021-01-22 18:18:17,157 [main] (InferenceVerificationTestExecutor.java:105) - Expected result: true
+TRACE 2021-01-22 18:18:17,202 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 18:18:17,202 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:18:34,287 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test7.ttl
+TRACE 2021-01-22 18:18:34,349 [main] (InferenceVerificationTestExecutor.java:42) - Ontology IRI to test file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testOntologies/test7.ttl
+TRACE 2021-01-22 18:18:34,897 [main] (InferenceVerificationTestExecutor.java:53) - Importing Optional.empty
+TRACE 2021-01-22 18:18:34,901 [main] (InferenceVerificationTestExecutor.java:57) - Ontology axioms 2
+TRACE 2021-01-22 18:18:34,901 [main] (InferenceVerificationTestExecutor.java:60) - inputTestData: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test7.ttl
+TRACE 2021-01-22 18:18:34,902 [main] (InferenceVerificationTestExecutor.java:63) - Loading input data
+TRACE 2021-01-22 18:18:34,917 [main] (InferenceVerificationTestExecutor.java:67) - Importing Optional.empty
+TRACE 2021-01-22 18:18:34,918 [main] (InferenceVerificationTestExecutor.java:70) - Toy dataset axioms 1
+TRACE 2021-01-22 18:18:34,918 [main] (InferenceVerificationTestExecutor.java:75) - Ontology axioms 3
+TRACE 2021-01-22 18:18:35,502 [main] (InferenceVerificationTestExecutor.java:101) - SPARQL query: PREFIX  owlunittest: <https://w3id.org/OWLunit/test/>
+
+ASK
+WHERE
+  { owlunittest:i
+              a  owlunittest:A
+  }
+
+TRACE 2021-01-22 18:18:35,544 [main] (InferenceVerificationTestExecutor.java:105) - Expected result: true
+TRACE 2021-01-22 18:18:35,592 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 18:18:35,592 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:18:35,595 [main] (InferenceVerificationTestExecutor.java:42) - Ontology IRI to test null
+TRACE 2021-01-22 18:20:09,276 [main] (Utils.java:41) - Malformed url interpreting as file
+TRACE 2021-01-22 18:20:09,280 [main] (TestSuiteExecutor.java:33) - Location file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor1.ttl
+TRACE 2021-01-22 18:20:09,327 [main] (TestSuiteExecutor.java:36) - IRI Executor model size 7
+TRACE 2021-01-22 18:20:09,333 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:20:09,335 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test3.ttl
+TRACE 2021-01-22 18:20:09,342 [main] (InferenceVerificationTestExecutor.java:40) - Ontology IRI to test null
+TRACE 2021-01-22 18:20:09,639 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 18:20:09,640 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test2.ttl
+TRACE 2021-01-22 18:20:09,642 [main] (ErrorProvocationTestExecutor.java:28) - Ontology IRI to test null
+TRACE 2021-01-22 18:20:09,646 [main] (TestSuiteExecutor.java:45) - Executing Test Case file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 18:20:09,646 [main] (TestWorkerBase.java:30) - Loaded using IRI file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testSuiteExecutor-test1.ttl
+TRACE 2021-01-22 18:20:09,649 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 4
+TRACE 2021-01-22 18:20:09,655 [main] (Utils.java:41) - Malformed url interpreting as file
+DEBUG 2021-01-22 18:20:09,688 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?s @?p ?o
+DEBUG 2021-01-22 18:20:09,694 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?s @rdf:type ?o
+DEBUG 2021-01-22 18:20:09,695 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?s @?p ?o
+DEBUG 2021-01-22 18:20:09,697 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?o @?p1 ?o1
+DEBUG 2021-01-22 18:20:09,861 [main] (QueryElementVisitorPrototyper.java:50) - Set Bindings
+DEBUG 2021-01-22 18:20:09,964 [main] (QueryElementVisitorPrototyper.java:55) - Binding 
+DEBUG 2021-01-22 18:20:09,967 [main] (QueryElementVisitorPrototyper.java:58) - subC1
+DEBUG 2021-01-22 18:20:09,968 [main] (QueryElementVisitorPrototyper.java:55) - Binding 
+DEBUG 2021-01-22 18:20:09,968 [main] (QueryElementVisitorPrototyper.java:58) - subC1
+DEBUG 2021-01-22 18:20:09,969 [main] (QueryElementVisitorPrototyper.java:55) - Binding 
+DEBUG 2021-01-22 18:20:09,969 [main] (QueryElementVisitorPrototyper.java:58) - subC1
+DEBUG 2021-01-22 18:20:09,970 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?subC1 @rdfs:subClassOf https://example.org/c1
+DEBUG 2021-01-22 18:20:09,970 [main] (QueryElementVisitorPrototyper.java:165) - The triple has bindings
+DEBUG 2021-01-22 18:20:09,970 [main] (QueryElementVisitorPrototyper.java:167) - Binding ( ?subC1 = <https://example.org/c3> ) -> [Root]
+DEBUG 2021-01-22 18:20:09,970 [main] (QueryElementVisitorPrototyper.java:169) - Binding ( ?subC1 = <https://example.org/c3> ) -> [Root] has ?subC1 @rdfs:subClassOf https://example.org/c1
+DEBUG 2021-01-22 18:20:09,971 [main] (QueryElementVisitorPrototyper.java:167) - Binding ( ?subC1 = <https://example.org/c2> ) -> [Root]
+DEBUG 2021-01-22 18:20:09,971 [main] (QueryElementVisitorPrototyper.java:169) - Binding ( ?subC1 = <https://example.org/c2> ) -> [Root] has ?subC1 @rdfs:subClassOf https://example.org/c1
+DEBUG 2021-01-22 18:20:09,971 [main] (QueryElementVisitorPrototyper.java:167) - Binding ( ?subC1 = <https://example.org/c1> ) -> [Root]
+DEBUG 2021-01-22 18:20:09,971 [main] (QueryElementVisitorPrototyper.java:169) - Binding ( ?subC1 = <https://example.org/c1> ) -> [Root] has ?subC1 @rdfs:subClassOf https://example.org/c1
+DEBUG 2021-01-22 18:20:09,971 [main] (QueryElementVisitorPrototyper.java:161) - Triple ?iC1 @rdf:type ?subC1
+DEBUG 2021-01-22 18:20:09,971 [main] (QueryElementVisitorPrototyper.java:165) - The triple has bindings
+DEBUG 2021-01-22 18:20:09,972 [main] (QueryElementVisitorPrototyper.java:167) - Binding ( ?subC1 = <https://example.org/c3> ) -> [Root]
+DEBUG 2021-01-22 18:20:09,972 [main] (QueryElementVisitorPrototyper.java:169) - Binding ( ?subC1 = <https://example.org/c3> ) -> [Root] has ?iC1 @rdf:type ?subC1
+DEBUG 2021-01-22 18:20:09,972 [main] (QueryElementVisitorPrototyper.java:167) - Binding ( ?subC1 = <https://example.org/c2> ) -> [Root]
+DEBUG 2021-01-22 18:20:09,972 [main] (QueryElementVisitorPrototyper.java:169) - Binding ( ?subC1 = <https://example.org/c2> ) -> [Root] has ?iC1 @rdf:type ?subC1
+DEBUG 2021-01-22 18:20:09,973 [main] (QueryElementVisitorPrototyper.java:167) - Binding ( ?subC1 = <https://example.org/c1> ) -> [Root]
+DEBUG 2021-01-22 18:20:09,973 [main] (QueryElementVisitorPrototyper.java:169) - Binding ( ?subC1 = <https://example.org/c1> ) -> [Root] has ?iC1 @rdf:type ?subC1
+TRACE 2021-01-22 18:20:09,982 [main] (TestWorkerBase.java:30) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl
+TRACE 2021-01-22 18:20:10,705 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 7
+TRACE 2021-01-22 18:20:10,706 [main] (CompetencyQuestionVerificationExecutor.java:134) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 18:20:10,707 [main] (CompetencyQuestionVerificationExecutor.java:43) - Input TOY_DATASET
+TRACE 2021-01-22 18:20:10,713 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 18:20:11,247 [main] (CompetencyQuestionVerificationExecutor.java:79) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:11,247 [main] (CompetencyQuestionVerificationExecutor.java:87) - inputTestData: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 18:20:11,247 [main] (CompetencyQuestionVerificationExecutor.java:96) - TOY https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 18:20:11,492 [main] (CompetencyQuestionVerificationExecutor.java:104) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 18:20:11,492 [main] (CompetencyQuestionVerificationExecutor.java:105) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:11,510 [main] (TestWorkerBase.java:30) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1-testalod.ttl
+TRACE 2021-01-22 18:20:11,727 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 5
+TRACE 2021-01-22 18:20:11,728 [main] (CompetencyQuestionVerificationExecutor.java:134) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 18:20:11,728 [main] (CompetencyQuestionVerificationExecutor.java:43) - Input TOY_DATASET
+TRACE 2021-01-22 18:20:11,729 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 18:20:11,729 [main] (CompetencyQuestionVerificationExecutor.java:79) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:11,730 [main] (CompetencyQuestionVerificationExecutor.java:87) - inputTestData: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 18:20:11,730 [main] (CompetencyQuestionVerificationExecutor.java:96) - TOY https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/datacq1.ttl
+TRACE 2021-01-22 18:20:11,755 [main] (CompetencyQuestionVerificationExecutor.java:104) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 18:20:11,756 [main] (CompetencyQuestionVerificationExecutor.java:105) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:11,756 [main] (TestWorkerBase.java:30) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/iv.ttl
+TRACE 2021-01-22 18:20:11,970 [main] (InferenceVerificationTestExecutor.java:40) - Ontology IRI to test http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#
+TRACE 2021-01-22 18:20:12,524 [main] (InferenceVerificationTestExecutor.java:51) - Importing Optional[http://www.ontologydesignpatterns.org/ont/dul/DUL.owl]
+TRACE 2021-01-22 18:20:12,530 [main] (InferenceVerificationTestExecutor.java:55) - Ontology axioms 1493
+TRACE 2021-01-22 18:20:12,530 [main] (InferenceVerificationTestExecutor.java:58) - inputTestData: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/ivdata.ttl
+TRACE 2021-01-22 18:20:12,530 [main] (InferenceVerificationTestExecutor.java:61) - Loading input data
+TRACE 2021-01-22 18:20:12,961 [main] (InferenceVerificationTestExecutor.java:65) - Importing Optional.empty
+TRACE 2021-01-22 18:20:12,961 [main] (InferenceVerificationTestExecutor.java:68) - Toy dataset axioms 1
+TRACE 2021-01-22 18:20:12,962 [main] (InferenceVerificationTestExecutor.java:73) - Ontology axioms 1494
+TRACE 2021-01-22 18:20:18,014 [main] (InferenceVerificationTestExecutor.java:99) - SPARQL query: PREFIX  dul:  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX  ex:   <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/>
+
+ASK
+WHERE
+  { ex:Luigi  a  dul:Agent }
+
+TRACE 2021-01-22 18:20:18,015 [main] (InferenceVerificationTestExecutor.java:103) - Expected result: true
+TRACE 2021-01-22 18:20:18,016 [main] (TestWorkerBase.java:30) - Loaded using IRI https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/ep.ttl
+TRACE 2021-01-22 18:20:18,235 [main] (ErrorProvocationTestExecutor.java:28) - Ontology IRI to test http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#
+TRACE 2021-01-22 18:20:18,394 [main] (ErrorProvocationTestExecutor.java:39) - Importing Optional[http://www.ontologydesignpatterns.org/ont/dul/DUL.owl]
+TRACE 2021-01-22 18:20:18,396 [main] (ErrorProvocationTestExecutor.java:43) - Ontology axioms 1493
+TRACE 2021-01-22 18:20:18,396 [main] (ErrorProvocationTestExecutor.java:46) - inputTestData: https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/epdata.ttl
+TRACE 2021-01-22 18:20:18,396 [main] (ErrorProvocationTestExecutor.java:49) - Loading input data
+TRACE 2021-01-22 18:20:18,890 [main] (ErrorProvocationTestExecutor.java:53) - Importing Optional.empty
+TRACE 2021-01-22 18:20:18,890 [main] (ErrorProvocationTestExecutor.java:56) - Toy dataset axioms 2
+TRACE 2021-01-22 18:20:18,890 [main] (ErrorProvocationTestExecutor.java:61) - Ontology axioms 1495
+TRACE 2021-01-22 18:20:18,931 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test1.ttl
+TRACE 2021-01-22 18:20:18,933 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 4
+TRACE 2021-01-22 18:20:18,934 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 18:20:19,314 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test2.ttl
+TRACE 2021-01-22 18:20:19,317 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 4
+TRACE 2021-01-22 18:20:19,317 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interessi  ?interest }
+
+TRACE 2021-01-22 18:20:19,593 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test3.ttl
+TRACE 2021-01-22 18:20:19,595 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 3
+TRACE 2021-01-22 18:20:19,595 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test4.ttl
+TRACE 2021-01-22 18:20:19,597 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 7
+TRACE 2021-01-22 18:20:19,598 [main] (CompetencyQuestionVerificationExecutor.java:134) - Input Datata Category: https://w3id.org/OWLunit/ontology/ToyDataset
+TRACE 2021-01-22 18:20:19,598 [main] (CompetencyQuestionVerificationExecutor.java:43) - Input TOY_DATASET
+TRACE 2021-01-22 18:20:19,599 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 18:20:19,744 [main] (CompetencyQuestionVerificationExecutor.java:79) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:19,744 [main] (CompetencyQuestionVerificationExecutor.java:87) - inputTestData: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 18:20:19,745 [main] (CompetencyQuestionVerificationExecutor.java:96) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test4.ttl
+TRACE 2021-01-22 18:20:19,747 [main] (CompetencyQuestionVerificationExecutor.java:104) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 18:20:19,748 [main] (CompetencyQuestionVerificationExecutor.java:105) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:20,950 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test5.ttl
+TRACE 2021-01-22 18:20:20,953 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 7
+TRACE 2021-01-22 18:20:20,953 [main] (CompetencyQuestionVerificationExecutor.java:134) - Input Datata Category: https://w3id.org/OWLunit/ontology/SPARQLEndpoint
+TRACE 2021-01-22 18:20:20,954 [main] (CompetencyQuestionVerificationExecutor.java:43) - Input SPARQL_ENDPOINT
+TRACE 2021-01-22 18:20:20,954 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 18:20:21,207 [main] (CompetencyQuestionVerificationExecutor.java:79) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:21,207 [main] (CompetencyQuestionVerificationExecutor.java:87) - inputTestData: http://localhost:3000/test/query
+TRACE 2021-01-22 18:20:21,207 [main] (CompetencyQuestionVerificationExecutor.java:92) - SPARQL
+TRACE 2021-01-22 18:20:21,325 [main] (CompetencyQuestionVerificationExecutor.java:104) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 18:20:21,325 [main] (CompetencyQuestionVerificationExecutor.java:105) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:21,335 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test6.ttl
+TRACE 2021-01-22 18:20:21,337 [main] (CompetencyQuestionVerificationExecutor.java:39) - Number of triples in test case 5
+TRACE 2021-01-22 18:20:21,337 [main] (CompetencyQuestionVerificationExecutor.java:134) - Input Datata Category: https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#ToyDataset
+TRACE 2021-01-22 18:20:21,337 [main] (CompetencyQuestionVerificationExecutor.java:43) - Input TOY_DATASET
+TRACE 2021-01-22 18:20:21,338 [main] (CompetencyQuestionVerificationExecutor.java:47) - SPARQL query: PREFIX  foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT  ?interest
+WHERE
+  { ?person  foaf:interest  ?interest }
+
+TRACE 2021-01-22 18:20:21,338 [main] (CompetencyQuestionVerificationExecutor.java:79) - Expected result: {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:21,339 [main] (CompetencyQuestionVerificationExecutor.java:87) - inputTestData: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test6.ttl
+TRACE 2021-01-22 18:20:21,339 [main] (CompetencyQuestionVerificationExecutor.java:96) - TOY file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test6.ttl
+TRACE 2021-01-22 18:20:21,340 [main] (CompetencyQuestionVerificationExecutor.java:104) - Actual { "head": {
+    "vars": [ "interest" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "interest": { "type": "uri" , "value": "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" }
+      }
+    ]
+  }
+}
+
+TRACE 2021-01-22 18:20:21,340 [main] (CompetencyQuestionVerificationExecutor.java:105) - Expected {  "head": {  "vars": [  "interest" ] } ,  "results": {  "bindings": [ {  "interest": {  "type":  "uri" ,  "value":  "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball" } } ] } }
+TRACE 2021-01-22 18:20:21,350 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test7.ttl
+TRACE 2021-01-22 18:20:21,352 [main] (InferenceVerificationTestExecutor.java:40) - Ontology IRI to test file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testOntologies/test7.ttl
+TRACE 2021-01-22 18:20:21,368 [main] (InferenceVerificationTestExecutor.java:51) - Importing Optional.empty
+TRACE 2021-01-22 18:20:21,369 [main] (InferenceVerificationTestExecutor.java:55) - Ontology axioms 2
+TRACE 2021-01-22 18:20:21,369 [main] (InferenceVerificationTestExecutor.java:58) - inputTestData: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test7.ttl
+TRACE 2021-01-22 18:20:21,369 [main] (InferenceVerificationTestExecutor.java:61) - Loading input data
+TRACE 2021-01-22 18:20:21,377 [main] (InferenceVerificationTestExecutor.java:65) - Importing Optional.empty
+TRACE 2021-01-22 18:20:21,378 [main] (InferenceVerificationTestExecutor.java:68) - Toy dataset axioms 1
+TRACE 2021-01-22 18:20:21,378 [main] (InferenceVerificationTestExecutor.java:73) - Ontology axioms 3
+TRACE 2021-01-22 18:20:21,394 [main] (InferenceVerificationTestExecutor.java:99) - SPARQL query: PREFIX  owlunittest: <https://w3id.org/OWLunit/test/>
+
+ASK
+WHERE
+  { owlunittest:i
+              a  owlunittest:A
+  }
+
+TRACE 2021-01-22 18:20:21,395 [main] (InferenceVerificationTestExecutor.java:103) - Expected result: true
+TRACE 2021-01-22 18:20:21,396 [main] (TestWorkerBase.java:33) - Loaded using path src/main/resources/testResources/test8.ttl
+TRACE 2021-01-22 18:20:21,396 [main] (ErrorProvocationTestExecutor.java:28) - Ontology IRI to test file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/testOntologies/test8.ttl
+TRACE 2021-01-22 18:20:21,406 [main] (ErrorProvocationTestExecutor.java:39) - Importing Optional.empty
+TRACE 2021-01-22 18:20:21,406 [main] (ErrorProvocationTestExecutor.java:43) - Ontology axioms 2
+TRACE 2021-01-22 18:20:21,407 [main] (ErrorProvocationTestExecutor.java:46) - inputTestData: file:///Users/lgu/workspace/xd/owl-unit/src/main/resources/testResources/data/test8.ttl
+TRACE 2021-01-22 18:20:21,407 [main] (ErrorProvocationTestExecutor.java:49) - Loading input data
+TRACE 2021-01-22 18:20:21,414 [main] (ErrorProvocationTestExecutor.java:53) - Importing Optional.empty
+TRACE 2021-01-22 18:20:21,415 [main] (ErrorProvocationTestExecutor.java:56) - Toy dataset axioms 2
+TRACE 2021-01-22 18:20:21,415 [main] (ErrorProvocationTestExecutor.java:61) - Ontology axioms 4

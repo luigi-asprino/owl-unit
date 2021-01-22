@@ -31,7 +31,6 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 	public CompetencyQuestionVerificationExecutor(String testCaseIRI) {
 		super();
 		super.testCaseIRI = testCaseIRI;
-		super.model = ModelFactory.createDefaultModel();
 	}
 
 	public boolean runTest() throws OWLUnitException {

@@ -13,12 +13,13 @@ public class InferenceVerificationTest {
 	public void test7() {
 		String URItest = "https://w3id.org/OWLunit/test/test7";
 		String fileIn = "src/main/resources/testResources/test7.ttl";
-		InferenceVerificationTestExecutor tc = new InferenceVerificationTestExecutor(URItest);
-		tc.setFileIn(fileIn);
 		try {
+			InferenceVerificationTestExecutor tc = new InferenceVerificationTestExecutor(URItest);
+			tc.setFileIn(fileIn);
 			assertTrue(tc.runTest());
 		} catch (OWLUnitException e) {
 			e.printStackTrace();
 		}
 	}
+	
 }

@@ -1,5 +1,8 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFNode;
@@ -8,11 +11,14 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.vocabulary.RDF;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import it.cnr.istc.stlab.owlunit.Constants;
 
 public class TestSuiteExecutor {
 
+	private static final Logger logger = LoggerFactory.getLogger(TestSuiteExecutor.class);
 
 	private String iri;
 
@@ -20,15 +26,23 @@ public class TestSuiteExecutor {
 		this.iri = iri;
 	}
 
-	public void runTestSuite() {
+	public int runTestSuite() throws URISyntaxException, MalformedURLException {
 		Model m = ModelFactory.createDefaultModel();
-		RDFDataMgr.read(m, iri);
-		StmtIterator it = m.listStatements(m.getResource(iri), m.getProperty(Constants.HASTESTCASE), (RDFNode) null);
-		System.out.println("Test-Case URI\tResult");
+		String location = Utils.resolveLocationString(iri);
 
+		logger.trace("Location {}", location);
+
+		RDFDataMgr.read(m, location);
+		logger.trace("IRI Executor model size {}", m.size());
+		StmtIterator it = m.listStatements(m.getResource(location), m.getProperty(Constants.HASTESTCASE),
+				(RDFNode) null);
+//		logger.trace("Number of test cases {}", it.toModel().size());
+//		m.write(System.out, "NT");
+		System.out.println("Test-Case URI\tResult");
+		int testsRan = 0;
 		while (it.hasNext()) {
 			Statement s = it.next();
-
+			logger.trace("Executing Test Case {}", s.getObject().asResource().getURI());
 			StmtIterator it2 = s.getObject().asResource().listProperties(RDF.type);
 			while (it2.hasNext()) {
 				Statement s2 = (Statement) it2.next();
@@ -40,24 +54,29 @@ public class TestSuiteExecutor {
 					} else {
 						System.out.println(s2.getSubject().asResource().getURI() + "\tFailed");
 					}
+					testsRan++;
 				} catch (Exception e) {
 					// logger.info("{}\t{}", s2.getSubject().asResource().getURI(), e.getMessage());
-					System.err.println("Error " + s2.getSubject().asResource().getURI()+" "+e.getMessage());
+					System.err.println("Error " + s2.getSubject().asResource().getURI() + " " + e.getMessage());
+					e.printStackTrace();
 
 				}
 			}
 		}
+		return testsRan;
 	}
 
-	private boolean runTestByClass(Resource iriTestCase, Resource klass) throws OWLUnitException {
+	private boolean runTestByClass(Resource iriTestCase, Resource klass) throws OWLUnitException, URISyntaxException {
 		if (klass.getURI().equals(Constants.CQVERIFICATION)) {
 			CompetencyQuestionVerificationExecutor cqtw = new CompetencyQuestionVerificationExecutor(
 					iriTestCase.getURI());
 			return cqtw.runTest();
 		} else if (klass.getURI().equals(Constants.ERRORPROVOCATION)) {
-			// TODO
+			ErrorProvocationTestExecutor cqtw = new ErrorProvocationTestExecutor(iriTestCase.getURI());
+			return cqtw.runTest();
 		} else if (klass.getURI().equals(Constants.INFERENCEVERIFICATION)) {
-			// TODO
+			InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(iriTestCase.getURI());
+			return te.runTest();
 		}
 		throw new OWLUnitException("Unrecognized test case! class: " + klass.getURI());
 	}
