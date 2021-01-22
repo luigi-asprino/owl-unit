@@ -81,3 +81,23 @@ ex:ep.ttl a owlunit:ErrorProvocation ;
 ```
 OWLunit makes sure that ontology and input data are inconsistent together.
 
+
+## Test Suite
+
+OWLunit is able to run test cases grouped in test suites.
+
+```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+
+ex:suite1.ttl a owlunit:TestSuite ;
+	owlunit:hasTestCase ex:cq1-testalod.ttl ;
+	owlunit:hasTestCase ex:iv.ttl ;
+	owlunit:hasTestCase ex:ep.ttl  .
+
+ex:cq1-testalod.ttl  a owlunit:CompetencyQuestionVerification .
+ex:iv.ttl a owlunit:InferenceVerification .
+ex:ep.ttl  a owlunit:ErrorProvocation .
+
+```
+
