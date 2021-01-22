@@ -115,6 +115,6 @@ usage: java -jar OWLUnit-0.0.2.jar [ARGS]
 
 ## License
 
-OWLunit is distributed under [Apache 2.0 License][LICENSE]
+OWLunit is distributed under [Apache 2.0 License](LICENSE)
 
 
