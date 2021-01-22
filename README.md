@@ -4,7 +4,7 @@ OWLunit is a tool that allows you to run unit tests for ontologies defined accor
 
 OWLunit runs three kinds of test cases: Competency Question Verification, Inference Verification, Error Provocation Verification.
 
-## Competency Question Verification
+### Competency Question Verification
 
 The Competency Question (CQ) Verification  consists in testing whether the ontology vocabulary allows to convert a CQ, reflecting an ontology requirement, to a SPARQL query. 
 A test case can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
@@ -45,7 +45,7 @@ ex:cq1-testalod.ttl  testannotationschema:hasCQ "What are the interests of a cer
 
 In this case the condition 1. is not evaluated.
 
-## Inference Verification
+### Inference Verification
 
 The Inference Verification focuses on checking the inferences over the ontologies, by comparing the expected inferences to the actual ones.
 A test case of this kind can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
@@ -65,7 +65,7 @@ ex:iv.ttl a owlunit:InferenceVerification ;
 ```
 OWLunit makes sure that: 1. the tested ontology is consistent, 2. (if input data is provided) ontology and input data together don't lead to any inconsistency, 3. (if a SPARQL unit test is provided) the result of the SPARQL unit test is equivalent to the expected result.
 
-## Error Provocation 
+### Error Provocation 
 
 The Error Provocation test is intended to stress the ontology by injecting inconsistent data that violates the ontology.
 A test case of this kind can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
@@ -82,7 +82,7 @@ ex:ep.ttl a owlunit:ErrorProvocation ;
 OWLunit makes sure that ontology and input data are inconsistent together.
 
 
-## Test Suite
+### Test Suite
 
 OWLunit is able to run test cases grouped in test suites.
 
@@ -100,4 +100,21 @@ ex:iv.ttl a owlunit:InferenceVerification .
 ex:ep.ttl  a owlunit:ErrorProvocation .
 
 ```
+
+## Download and Usage
+
+An executable JAR can be obtained from the [Releases](https://github.com/luigi-asprino/owl-unit/releases) page.
+
+The jar can be executed as follows:
+
+```
+usage: java -jar OWLUnit-0.0.2.jar [ARGS]
+ -c,--test-case <URI>    The URI of the test case to execute.
+ -s,--test-suite <URI>   The URI of the test suite to execute.
+```
+
+## License
+
+OWLunit is distributed under [Apache 2.0 License][LICENSE]
+
 
