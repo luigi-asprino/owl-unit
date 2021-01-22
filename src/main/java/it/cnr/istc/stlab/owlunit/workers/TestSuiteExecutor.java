@@ -1,6 +1,5 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 
 import org.apache.jena.rdf.model.Model;
@@ -26,9 +25,9 @@ public class TestSuiteExecutor {
 		this.iri = iri;
 	}
 
-	public int runTestSuite() throws URISyntaxException, MalformedURLException {
+	public int runTestSuite() {
 		Model m = ModelFactory.createDefaultModel();
-		String location = Utils.resolveLocationString(iri);
+		String location = iri;
 
 		logger.trace("Location {}", location);
 

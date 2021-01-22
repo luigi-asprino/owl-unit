@@ -55,5 +55,16 @@ public class OnlineTests {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void test5() {
+		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/ep.ttl";
+		ErrorProvocationTestExecutor te = new ErrorProvocationTestExecutor(URItest);
+		try {
+			assertTrue(te.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
