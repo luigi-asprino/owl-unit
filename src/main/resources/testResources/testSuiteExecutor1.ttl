@@ -1,10 +1,11 @@
 @prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix test: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/src/main/resources/testResources/> .
 
-<testSuiteExecutor1.ttl> a owlunit:TestSuite ;
-	owlunit:hasTestCase <testSuiteExecutor-test1.ttl> ;
-	owlunit:hasTestCase <testSuiteExecutor-test2.ttl> ;
-	owlunit:hasTestCase <testSuiteExecutor-test3.ttl>  .
+test:testSuiteExecutor1.ttl a owlunit:TestSuite ;
+	owlunit:hasTestCase test:testSuiteExecutor-test1.ttl ;
+	owlunit:hasTestCase test:testSuiteExecutor-test2.ttl ;
+	owlunit:hasTestCase test:testSuiteExecutor-test3.ttl  .
 
-<testSuiteExecutor-test1.ttl>  a owlunit:CompetencyQuestionVerification .
-<testSuiteExecutor-test3.ttl>  a owlunit:InferenceVerification .
-<testSuiteExecutor-test2.ttl>  a owlunit:ErrorProvocation .
+test:testSuiteExecutor-test1.ttl  a owlunit:CompetencyQuestionVerification .
+test:testSuiteExecutor-test3.ttl  a owlunit:InferenceVerification .
+test:testSuiteExecutor-test2.ttl  a owlunit:ErrorProvocation .

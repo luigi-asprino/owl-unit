@@ -2,8 +2,10 @@
 @prefix owlunittest: <https://w3id.org/OWLunit/test/> .
 @prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix test: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/src/main/resources/testResources/> .
 
-<src/main/resources/testResources/testSuiteExecutor-test1.ttl> a owlunit:CompetencyQuestionVerification ;
+
+test:testSuiteExecutor-test1.ttl a owlunit:CompetencyQuestionVerification ;
 	owlunit:hasCompetencyQuestion "What are the interests of a certain person?"  ;
 	owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
 	owlunit:testsOntology foaf: .

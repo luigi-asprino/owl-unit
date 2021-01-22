@@ -2,7 +2,8 @@
 @prefix owlunittest: <https://w3id.org/OWLunit/test/> .
 @prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix test: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/src/main/resources/testResources/> .
 
-<src/main/resources/testResources/testSuiteExecutor-test2.ttl> a owlunit:ErrorProvocation ;
+test:testSuiteExecutor-test2.ttl a owlunit:ErrorProvocation ;
 		owlunit:hasInputData <data/testSuiteExecutor-test2.ttl> ;
 	 	owlunit:testsOntology <testOntologies/testSuiteExecutor-test2.ttl> .
