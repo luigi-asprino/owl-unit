@@ -8,4 +8,4 @@ test:testSuiteExecutor-test3.ttl  a owlunit:InferenceVerification ;
 		owlunit:hasInputData <data/testSuiteExecutor-test3.ttl> ;
 		owlunit:hasSPARQLUnitTest "PREFIX  owlunittest: <https://w3id.org/OWLunit/test/> ASK { owlunittest:i a owlunittest:A }" ;
 		owlunit:hasExpectedResult true ;
-	 	owlunit:testsOntology <testOntologies/testSuiteExecutor-test3.ttl> .
+	 	owlunit:testsOntology <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/src/main/resources/testResources/testOntologies/testSuiteExecutor-test3.ttl> .
