@@ -1,0 +1,8 @@
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+
+owlunittest:test8 a owlunit:ErrorProvocation ;
+	owlunit:hasInputData <data/test8.ttl> ;
+ 	owlunit:testsOntology <testOntologies/test8.ttl> .

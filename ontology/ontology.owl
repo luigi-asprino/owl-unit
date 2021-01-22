@@ -7,10 +7,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://w3id.org/OWLunit/ontology/"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -29,7 +29,7 @@
         <rdfs:comment xml:lang="en">It associates a TestRun to the TestCase it refers to.</rdfs:comment>
         <rdfs:label xml:lang="en">executes</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasActualResult -->
@@ -38,7 +38,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/OWLunit/ontology/TestRun"/>
         <rdfs:label xml:lang="en">has actual result</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasExpectedResult -->
@@ -46,7 +46,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/OWLunit/ontology/hasExpectedResult">
         <rdfs:domain rdf:resource="https://w3id.org/OWLunit/ontology/TestCase"/>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasInputData -->
@@ -56,7 +56,7 @@
         <rdfs:comment xml:lang="en">It associates a TestCase with the input data of the test.</rdfs:comment>
         <rdfs:label xml:lang="en">has input data</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasInputTestDataCategory -->
@@ -66,7 +66,7 @@
         <rdfs:range rdf:resource="https://w3id.org/OWLunit/ontology/InputDataCategory"/>
         <rdfs:label xml:lang="en">has input test data category</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasReasoner -->
@@ -76,7 +76,7 @@
         <rdfs:range rdf:resource="https://w3id.org/OWLunit/ontology/Reasoner"/>
         <rdfs:label xml:lang="en">has reasoner</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasTestCase -->
@@ -87,7 +87,7 @@
         <rdfs:comment xml:lang="en">It associates a TestSuite with its TestCases.</rdfs:comment>
         <rdfs:label xml:lang="en">has test case</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/testsOntology -->
@@ -97,10 +97,10 @@
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
         <rdfs:label xml:lang="en">tests ontology</rdfs:label>
     </owl:ObjectProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -108,7 +108,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasCompetencyQuestion -->
@@ -117,7 +117,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/OWLunit/ontology/CompetencyQuestionVerification"/>
         <rdfs:label xml:lang="en">has competency question</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/hasSPARQLQueryUnitTest -->
@@ -125,7 +125,7 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/OWLunit/ontology/hasSPARQLQueryUnitTest">
         <rdfs:label xml:lang="en">has SPARQL query unit test</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/testDate -->
@@ -135,10 +135,10 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:label xml:lang="en">test date</rdfs:label>
     </owl:DatatypeProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -146,13 +146,13 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://www.w3.org/2002/07/owl#Ontology -->
 
     <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Ontology"/>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/CompetencyQuestionVerification -->
@@ -162,7 +162,7 @@
         <rdfs:comment xml:lang="en">Competency Question Verification consists in testing whether the ontology vocabulary allows to convert a Competency Question to a SPARQL query.</rdfs:comment>
         <rdfs:label xml:lang="en">Competency Question Verification</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/ErrorProvocation -->
@@ -172,7 +172,7 @@
         <rdfs:comment xml:lang="en">Error provocation is intended to stress the ontology by injecting inconsistent data.</rdfs:comment>
         <rdfs:label xml:lang="en">Error Provocation</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/InferenceVerification -->
@@ -182,7 +182,7 @@
         <rdfs:comment xml:lang="en">Inference Verification focuses on checking expected inferences.</rdfs:comment>
         <rdfs:label xml:lang="en">Inference Verification</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/InputDataCategory -->
@@ -191,7 +191,7 @@
         <rdfs:comment xml:lang="en">The category of input test data.</rdfs:comment>
         <rdfs:label xml:lang="en">Input Data Category</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/Reasoner -->
@@ -199,7 +199,7 @@
     <owl:Class rdf:about="https://w3id.org/OWLunit/ontology/Reasoner">
         <rdfs:label xml:lang="en">Reasoner</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/TestCase -->
@@ -220,7 +220,7 @@
         <rdfs:comment xml:lang="en">A test case is a specification of the inputs, execution conditions, testing procedure, and expected results that define a single test to be executed to achieve a particular ontology testing objective.</rdfs:comment>
         <rdfs:label xml:lang="en">Test Case</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/TestRun -->
@@ -234,7 +234,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Test Run</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/TestSuite -->
@@ -249,10 +249,10 @@
         <rdfs:comment xml:lang="en">A collection of test cases that are intended to be used to test an Ontology.</rdfs:comment>
         <rdfs:label xml:lang="en">Test Suite</rdfs:label>
     </owl:Class>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -260,7 +260,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
 
+
+    <!-- https://w3id.org/OWLunit/ontology/HermiT -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/OWLunit/ontology/HermiT">
+        <rdf:type rdf:resource="https://w3id.org/OWLunit/ontology/Reasoner"/>
+    </owl:NamedIndividual>
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/SPARQLendpoint -->
@@ -268,7 +276,7 @@
     <owl:NamedIndividual rdf:about="https://w3id.org/OWLunit/ontology/SPARQLendpoint">
         <rdf:type rdf:resource="https://w3id.org/OWLunit/ontology/InputDataCategory"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- https://w3id.org/OWLunit/ontology/ToyDataset -->
@@ -281,3 +289,4 @@
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

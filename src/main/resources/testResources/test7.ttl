@@ -1,0 +1,10 @@
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+
+owlunittest:test7 a owlunit:InferenceVerification ;
+	owlunit:hasInputData <data/test7.ttl> ;
+	owlunit:hasSPARQLUnitTest "PREFIX  owlunittest: <https://w3id.org/OWLunit/test/> ASK { owlunittest:i a owlunittest:A }" ;
+	owlunit:hasExpectedResult true ;
+ 	owlunit:testsOntology <testOntologies/test7.ttl> .
