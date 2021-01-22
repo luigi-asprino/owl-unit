@@ -3,5 +3,5 @@
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 
 ex:ep.ttl a owlunit:ErrorProvocation ;
-	owlunit:hasInputData ex:ep.ttl ;
+	owlunit:hasInputData ex:epdata.ttl ;
  	owlunit:testsOntology dul: .
