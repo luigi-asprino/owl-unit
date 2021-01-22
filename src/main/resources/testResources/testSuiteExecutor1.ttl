@@ -2,7 +2,7 @@
 @prefix test: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/src/main/resources/testResources/> .
 
 test:testSuiteExecutor1.ttl a owlunit:TestSuite ;
-	owlunit:hasTestCase test:estSuiteExecutor-test1.ttl ;
+	owlunit:hasTestCase test:testSuiteExecutor-test1.ttl ;
 	owlunit:hasTestCase test:testSuiteExecutor-test2.ttl ;
 	owlunit:hasTestCase test:testSuiteExecutor-test3.ttl  .
 
