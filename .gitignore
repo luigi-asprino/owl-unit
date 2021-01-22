@@ -13,3 +13,4 @@ buildNumber.properties
 /.project
 catalog-v001.xml
 .DS_Store
+log/
