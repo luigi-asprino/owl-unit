@@ -2,8 +2,9 @@
 @prefix owlunittest: <https://w3id.org/OWLunit/test/> .
 @prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix test: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/src/main/resources/testResources/> .
 
-<src/main/resources/testResources/testSuiteExecutor-test2.ttl>  a owlunit:InferenceVerification ;
+test:testSuiteExecutor-test2.ttl  a owlunit:InferenceVerification ;
 		owlunit:hasInputData <data/testSuiteExecutor-test3.ttl> ;
 		owlunit:hasSPARQLUnitTest "PREFIX  owlunittest: <https://w3id.org/OWLunit/test/> ASK { owlunittest:i a owlunittest:A }" ;
 		owlunit:hasExpectedResult true ;
