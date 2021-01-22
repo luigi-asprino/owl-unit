@@ -2,7 +2,10 @@
 @prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-ex:cq1.ttl a owlunit:CompetencyQuestionVerification .
-ex:cq1.ttl owlunit:hasCompetencyQuestion "What are the interests of a certain person?" .
-ex:cq1.ttl owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" .
-ex:cq1.ttl owlunit:testsOntology foaf: .
+ex:cq1.ttl a owlunit:CompetencyQuestionVerification ;
+ 	owlunit:hasCompetencyQuestion "What are the interests of a certain person?" ;
+ 	owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
+	owlunit:hasInputData ex:datacq1.ttl ;
+	owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+	owlunit:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball\" } } ] } }";
+	owlunit:testsOntology foaf: .
