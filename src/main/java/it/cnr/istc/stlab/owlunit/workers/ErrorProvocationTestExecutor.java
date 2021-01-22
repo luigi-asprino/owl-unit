@@ -1,27 +1,15 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
-import org.apache.jena.query.Query;
-import org.apache.jena.query.QueryExecution;
-import org.apache.jena.query.QueryExecutionFactory;
-import org.apache.jena.query.Syntax;
-import org.apache.jena.rdf.model.Model;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.parameters.OntologyCopy;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
-import org.semanticweb.owlapi.util.InferredOntologyGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.github.owlcs.ontapi.OntManagers;
-import com.github.owlcs.ontapi.Ontology;
-import com.github.owlcs.ontapi.OntologyManager;
 
 public class ErrorProvocationTestExecutor extends TestWorkerBase {
 
