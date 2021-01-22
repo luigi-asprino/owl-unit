@@ -2,7 +2,7 @@
 @prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 
-ex:test7 a owlunit:InferenceVerification ;
+ex:iv.ttl a owlunit:InferenceVerification ;
 	owlunit:hasInputData ex:ivdata.ttl ;
 	owlunit:hasSPARQLUnitTest "PREFIX  ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/>  PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>  ASK { ex:Luigi a dul:Agent }" ;
 	owlunit:hasExpectedResult true ;
