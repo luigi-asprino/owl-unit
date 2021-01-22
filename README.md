@@ -25,7 +25,7 @@ ex:cq1.ttl a owlunit:CompetencyQuestionVerification ;
 ```
 
 
-OWLunit makes sure that: 1. ``foaf:interest`` is defined in  the tested ontology, 2. the result of the the SPARQL unit test query evaluated over the input data is isomorphic to the expected result.
+OWLunit makes sure that: 1. the IRI used within the SPARQL query are defined in  the tested ontology, 2. (if input data is provided) the result of the the SPARQL unit test query evaluated over the input data is isomorphic to the expected result.
 OWLunit is also able to run test cases CQ verification tests defined according to the [ODP's test annotation schema](http://www.ontologydesignpatterns.org/schemas/testannotationschema.owl) and [TESTaLOD ontology](https://github.com/TESTaLOD/TESTaLOD) as follows.
 
 
@@ -44,4 +44,40 @@ ex:cq1-testalod.ttl  testannotationschema:hasCQ "What are the interests of a cer
 ```
 
 In this case the condition 1. is not evaluated.
+
+## Inference Verification
+
+The Inference Verification focuses on checking the inferences over the ontologies, by comparing the expected inferences to the actual ones.
+A test case of this kind can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
+
+```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+
+ex:iv.ttl a owlunit:InferenceVerification ;
+	owlunit:hasInputData ex:ivdata.ttl ;
+	owlunit:hasSPARQLUnitTest "PREFIX  ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/>  PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>  ASK { ex:Luigi a dul:Agent }" ;
+	owlunit:hasReasoner owlunit:HermiT ;
+	owlunit:hasExpectedResult true ;
+ 	owlunit:testsOntology dul: .
 	
+```
+OWLunit makes sure that: 1. the tested ontology is consistent, 2. (if input data is provided) ontology and input data together don't lead to any inconsistency, 3. (if a SPARQL unit test is provided) the result of the SPARQL unit test is equivalent to the expected result.
+
+## Error Provocation 
+
+The Error Provocation test is intended to stress the ontology by injecting inconsistent data that violates the ontology.
+A test case of this kind can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
+
+```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+
+ex:ep.ttl a owlunit:ErrorProvocation ;
+	owlunit:hasInputData ex:epdata.ttl ;
+ 	owlunit:testsOntology dul: .
+```
+OWLunit makes sure that ontology and input data are inconsistent together.
+

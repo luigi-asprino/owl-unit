@@ -1,4 +1,4 @@
-package it.cnr.istc.stlab.owlunit.resources;
+package it.cnr.istc.stlab.owlunit.workers;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;

@@ -23,7 +23,6 @@ import it.cnr.istc.stlab.owlunit.Constants;
 public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 	private static final Logger logger = LoggerFactory.getLogger(CompetencyQuestionVerificationExecutor.class);
-	private String fileIn;
 
 	private enum Input {
 		SPARQL_ENDPOINT, TOY_DATASET
@@ -35,18 +34,8 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 		super.model = ModelFactory.createDefaultModel();
 	}
 
-	public void setFileIn(String fi) {
-		this.fileIn = fi;
-	}
-
 	public boolean runTest() throws OWLUnitException {
-		if (fileIn == null) {
-			logger.trace("Loaded using IRI {}", testCaseIRI);
-			RDFDataMgr.read(model, testCaseIRI);
-		} else {
-			logger.trace("Loaded using path {}", fileIn);
-			RDFDataMgr.read(model, fileIn);
-		}
+		loadTest();
 
 		logger.trace("Number of triples in test case " + model.size());
 
@@ -91,7 +80,12 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 			logger.trace("Expected result: " + expectedResult);
 
 			String inputTestData = getInputTestData();
-			logger.trace("SPARQL endpoint: " + inputTestData);
+
+			if (inputTestData == null) {
+				throw new OWLUnitException("No data input declared!");
+			}
+
+			logger.trace("inputTestData: " + inputTestData);
 
 			QueryExecution qexec = null;
 			switch (i) {
@@ -153,21 +147,6 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 	}
 
-	private String getExpectedResult() throws OWLUnitException {
-		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
-				model.getProperty(Constants.TESTANNOTATIONSCHEMA_HASEXPECTEDRESULT));
-		
-		if (!ni.hasNext()) {
-			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
-					model.getProperty(Constants.OWLUNIT_HASEXPECTEDRESULT));
-		}
-
-		if (!ni.hasNext()) {
-			throw new OWLUnitException("No expected result declared");
-		}
-
-		return ni.next().asLiteral().getString();
-
-	}
+	
 
 }

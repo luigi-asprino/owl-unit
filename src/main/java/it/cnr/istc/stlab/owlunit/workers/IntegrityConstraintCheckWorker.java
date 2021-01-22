@@ -41,7 +41,7 @@ public class IntegrityConstraintCheckWorker extends TestWorkerBase {
 			throw new OWLUnitException("Only ASK SPARQL query allowed");
 		}
 
-		boolean expectedResult = getExpectedResult();
+		boolean expectedResult = Boolean.parseBoolean(getExpectedResult());
 		logger.trace("Expected result: " + expectedResult);
 
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(sparqlEndpointURI, sparqlQuery);
@@ -68,28 +68,6 @@ public class IntegrityConstraintCheckWorker extends TestWorkerBase {
 		return inputDataCategory.equals(Constants.SPARQLENDPOINT_DATACATEGORY)
 				|| inputDataCategory.equals(Constants.SPARQLENDPOINT_DATACATEGORY_OLD)
 				|| inputDataCategory.equals(Constants.SPARQLENDPOINT_DATACATEGORY_TESTALOD);
-	}
-
-	private boolean getExpectedResult() throws OWLUnitException {
-		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
-				model.getProperty(Constants.TESTANNOTATIONSCHEMA_HASEXPECTEDRESULT));
-
-		if (!ni.hasNext()) {
-			throw new OWLUnitException("No expected result declared");
-		}
-
-		return ni.next().asLiteral().getBoolean();
-
-	}
-
-	public static void main(String[] args) {
-		IntegrityConstraintCheckWorker ccw = new IntegrityConstraintCheckWorker(
-				"https://w3id.org/arco/test/IC/testcase-01.owl");
-		try {
-			logger.info("Actual result " + ccw.runTest());
-		} catch (OWLUnitException e) {
-			e.printStackTrace();
-		}
 	}
 
 }
