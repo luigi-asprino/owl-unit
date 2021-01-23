@@ -12,10 +12,11 @@ import it.cnr.istc.stlab.owlunit.workers.OWLUnitException;
 import it.cnr.istc.stlab.owlunit.workers.TestSuiteExecutor;
 
 public class OnlineTests {
+	
 
 	@Test
 	public void test1() {
-		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1.ttl";
+		String URItest = "https://w3id.org/OWLunit/examples/cq1.ttl";
 		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
 		try {
 			assertTrue(cqve.runTest());
@@ -26,7 +27,7 @@ public class OnlineTests {
 
 	@Test
 	public void test2() {
-		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/cq1-testalod.ttl";
+		String URItest = "https://w3id.org/OWLunit/examples/cq1-testalod.ttl";
 		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
 		try {
 			assertTrue(cqve.runTest());
@@ -37,7 +38,7 @@ public class OnlineTests {
 
 	@Test
 	public void test3() {
-		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/iv.ttl";
+		String URItest = "https://w3id.org/OWLunit/examples/iv.ttl";
 		InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(URItest);
 		try {
 			assertTrue(te.runTest());
@@ -48,7 +49,7 @@ public class OnlineTests {
 
 	@Test
 	public void test4() {
-		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/ep.ttl";
+		String URItest = "https://w3id.org/OWLunit/examples/ep.ttl";
 		ErrorProvocationTestExecutor te = new ErrorProvocationTestExecutor(URItest);
 		try {
 			assertTrue(te.runTest());
@@ -59,7 +60,7 @@ public class OnlineTests {
 
 	@Test
 	public void test5() {
-		String URItest = "https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/suite1.ttl";
+		String URItest = "https://w3id.org/OWLunit/examples/suite1.ttl";
 		TestSuiteExecutor te = new TestSuiteExecutor(URItest);
 		assertEquals(3, te.runTestSuite());
 	}

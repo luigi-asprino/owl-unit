@@ -8,4 +8,4 @@ ex:cq1-testalod.ttl  testannotationschema:hasCQ "What are the interests of a cer
  	testannotationschema:hasSPARQLQueryUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
 	testalod:hasInputTestDataUri  ex:datacq1.ttl  ;
 	testalod:hasInputTestDataCategory testalod:ToyDataset ;
-	testannotationschema:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball\" } } ] } }" .
+	testannotationschema:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://w3id.org/OWLunit/examples/Basketball\" } } ] } }" .
