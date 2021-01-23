@@ -19,7 +19,7 @@ ex:cq1.ttl a owlunit:CompetencyQuestionVerification ;
  	owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
 	owlunit:hasInputData ex:datacq1.ttl ;
 	owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
-	owlunit:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball\" } } ] } }";
+	owlunit:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://w3id.org/OWLunit/examples/Basketball\" } } ] } }";
 	owlunit:testsOntology foaf: .
 
 ```
@@ -40,7 +40,7 @@ ex:cq1-testalod.ttl  testannotationschema:hasCQ "What are the interests of a cer
  	testannotationschema:hasSPARQLQueryUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
 	testalod:hasInputTestDataUri  ex:datacq1.ttl  ;
 	testalod:hasInputTestDataCategory testalod:ToyDataset ;
-	testannotationschema:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball\" } } ] } }" .
+	testannotationschema:hasExpectedResult "{  \"head\": {  \"vars\": [  \"interest\" ] } ,  \"results\": {  \"bindings\": [ {  \"interest\": {  \"type\":  \"uri\" ,  \"value\":  \"https://w3id.org/OWLunit/examples/Basketball\" } } ] } }" .
 ```
 
 In this case the condition 1. is not evaluated.
@@ -57,7 +57,7 @@ A test case of this kind can be specified according to the [OWLUnit Ontology](ht
 
 ex:iv.ttl a owlunit:InferenceVerification ;
 	owlunit:hasInputData ex:ivdata.ttl ;
-	owlunit:hasSPARQLUnitTest "PREFIX  ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/>  PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>  ASK { ex:Luigi a dul:Agent }" ;
+	owlunit:hasSPARQLUnitTest "PREFIX  ex: <https://w3id.org/OWLunit/examples/>  PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>  ASK { ex:Luigi a dul:Agent }" ;
 	owlunit:hasReasoner owlunit:HermiT ;
 	owlunit:hasExpectedResult true ;
  	owlunit:testsOntology dul: .
