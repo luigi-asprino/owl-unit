@@ -1,5 +1,5 @@
 @prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
-@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix ex: <https://w3id.org/OWLunit/examples/> .
 
 ex:suite1.ttl a owlunit:TestSuite ;
 	owlunit:hasTestCase ex:cq1-testalod.ttl ;

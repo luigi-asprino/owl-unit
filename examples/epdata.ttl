@@ -1,4 +1,4 @@
-@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix ex: <https://w3id.org/OWLunit/examples/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 
 ex:i a dul:Situation .
