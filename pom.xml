@@ -36,7 +36,7 @@
 				<version>2.4.3</version>
 				<executions>
 					<execution>
-						<id>sparql-anything</id>
+						<id>owl-unit</id>
 						<configuration>
 							<outputFile>target/OWLUnit-${project.version}.jar</outputFile>
 							<shadedArtifactAttached>false</shadedArtifactAttached>
