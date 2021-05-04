@@ -5,7 +5,7 @@
 
 	<groupId>it.cnr.istc.stlab</groupId>
 	<artifactId>owl.unit</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 
 
@@ -117,6 +117,8 @@
 			<groupId>com.github.owlcs</groupId>
 			<artifactId>ontapi</artifactId>
 			<version>2.1.0</version>
+
+		
 		</dependency>
 
 
@@ -169,11 +171,17 @@
 			</exclusions>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/net.sourceforge.owlapi/owlapi-distribution -->
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-distribution</artifactId>
 			<version>5.1.13</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>commons-codec</groupId>
+					<artifactId>commons-codec</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>

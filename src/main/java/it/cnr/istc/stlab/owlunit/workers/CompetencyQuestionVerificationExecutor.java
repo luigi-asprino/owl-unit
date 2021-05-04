@@ -24,7 +24,7 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 	private static final Logger logger = LoggerFactory.getLogger(CompetencyQuestionVerificationExecutor.class);
 
-	private enum Input {
+	public enum Input {
 		SPARQL_ENDPOINT, TOY_DATASET
 	}
 
@@ -38,9 +38,11 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 		logger.trace("Number of triples in test case " + model.size());
 
+		String inputTestData = null;
 		Input i = getInputType();
 		if (i != null) {
 			logger.trace("Input {}", i.toString());
+			inputTestData = getInputTestData();
 		}
 
 		Query sparqlQuery = getSPARQLQuery();
@@ -48,9 +50,10 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 		OntModel om = getTestedOntology();
 		if (om != null) {
-			QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(om);
+			QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(om,inputTestData,i);
 			sparqlQuery.getQueryPattern().visit(qeviev);
 			if (!qeviev.getResult()) {
+				logger.trace("Could not find an IRI used in the SPARQL query");
 				return false;
 			}
 //			QueryElementVisitorPrototyper qevp = new QueryElementVisitorPrototyper();
@@ -77,8 +80,6 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 			String expectedResult = getExpectedResult().replaceAll("\\\\\"", "\"");
 			logger.trace("Expected result: " + expectedResult);
-
-			String inputTestData = getInputTestData();
 
 			if (inputTestData == null) {
 				throw new OWLUnitException("No data input declared!");
@@ -145,7 +146,5 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 		return null;
 
 	}
-
-	
 
 }

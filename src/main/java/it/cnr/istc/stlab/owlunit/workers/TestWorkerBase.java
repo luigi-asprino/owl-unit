@@ -12,7 +12,9 @@ import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RiotException;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import org.slf4j.Logger;
@@ -96,7 +98,13 @@ public abstract class TestWorkerBase implements TestWorker {
 		}
 
 		OntModel om = ModelFactory.createOntologyModel();
-		RDFDataMgr.read(om, ontologyURI);
+		try {
+			RDFDataMgr.read(om, ontologyURI);
+		} catch (RiotException e) {
+			RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
+		}
+		
+		om.loadImports();
 
 		return om;
 	}

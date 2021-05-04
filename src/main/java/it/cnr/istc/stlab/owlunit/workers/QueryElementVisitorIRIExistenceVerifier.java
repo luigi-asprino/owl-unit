@@ -1,9 +1,12 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import org.apache.jena.graph.Graph;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntResource;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.sparql.graph.GraphFactory;
 import org.apache.jena.sparql.syntax.ElementAssign;
 import org.apache.jena.sparql.syntax.ElementBind;
 import org.apache.jena.sparql.syntax.ElementData;
@@ -23,14 +26,31 @@ import org.apache.jena.sparql.syntax.ElementTriplesBlock;
 import org.apache.jena.sparql.syntax.ElementUnion;
 import org.apache.jena.sparql.syntax.ElementVisitor;
 import org.apache.jena.vocabulary.RDF;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import it.cnr.istc.stlab.owlunit.OWLUnit;
+import it.cnr.istc.stlab.owlunit.workers.CompetencyQuestionVerificationExecutor.Input;
 
 public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 
 	private OntModel o;
 	private boolean result = true;
+	private Input i;
+	private String inputTestData;
+	private static final Logger logger = LoggerFactory.getLogger(OWLUnit.class);
+	private Graph m;
 
-	public QueryElementVisitorIRIExistenceVerifier(OntModel o) {
+	public QueryElementVisitorIRIExistenceVerifier(OntModel o, String inputTestData, Input i) {
 		this.o = o;
+		this.inputTestData = inputTestData;
+		this.i = i;
+
+		if (this.i == Input.TOY_DATASET) {
+			m = GraphFactory.createGraphMem();
+			RDFDataMgr.read(m, inputTestData);
+		}
+
 	}
 
 	public boolean getResult() {
@@ -142,7 +162,25 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 		}
 
 		OntResource or = o.getOntResource(r.getURI());
-		return or != null;
+
+		if (or == null) {
+			logger.trace("Couldn't find {}", r.getURI());
+
+			if(this.i==null)
+				return false;
+			
+			switch (this.i) {
+			case SPARQL_ENDPOINT:
+				// TODO
+				break;
+			case TOY_DATASET:
+				return m.contains(r, null, null) || m.contains(null, r, null) || m.contains(null, null, r);
+			}
+			return false;
+
+		}
+
+		return true;
 	}
 
 	@Override

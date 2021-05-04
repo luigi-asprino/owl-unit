@@ -18,7 +18,7 @@ public class TestQueryIRIExistenceVerifier {
 	public void test1() {
 		OntModel o = ModelFactory.createOntologyModel();
 		o.createClass(TEST_PREFIX + "c");
-		QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(o);
+		QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(o,null,null);
 		Query q = QueryFactory.create("SELECT * {?s a <" + TEST_PREFIX + "c> }");
 		q.getQueryPattern().visit(qeviev);
 		assertTrue(qeviev.getResult());
@@ -28,9 +28,10 @@ public class TestQueryIRIExistenceVerifier {
 	public void test2() {
 		OntModel o = ModelFactory.createOntologyModel();
 		o.createClass(TEST_PREFIX + "c");
-		QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(o);
+		QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(o, null,null);
 		Query q = QueryFactory.create("SELECT * {?s a <" + TEST_PREFIX + "d> }");
 		q.getQueryPattern().visit(qeviev);
+		System.out.println(qeviev.getResult());
 		assertTrue(!qeviev.getResult());
 	}
 }
