@@ -35,6 +35,17 @@ public class OnlineTests {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void test6() {
+		String URItest = "https://w3id.org/OWLunit/examples/cqmultiple.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	public void test3() {
