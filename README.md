@@ -25,7 +25,21 @@ ex:cq1.ttl a owlunit:CompetencyQuestionVerification ;
 ```
 
 
-OWLunit makes sure that: 1. the IRI used within the SPARQL query are defined in  the tested ontology, 2. (if input data is provided) the result of the the SPARQL unit test query evaluated over the input data is isomorphic to the expected result.
+OWLunit makes sure that: 1. the IRI used within the SPARQL query are defined either in the tested ontology or in the input test data (if provided); 2. (if input data is provided) the result of the the SPARQL unit test query evaluated over the input data is isomorphic to the expected result.
+Moreover, you can also test multiple ontologies at a time.
+
+```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix ex: <https://w3id.org/OWLunit/examples/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:cqmultiple.ttl a owlunit:CompetencyQuestionVerification ;
+	owlunit:hasCompetencyQuestion "What are the interests of a certain person?" ;
+	owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX DUL: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>  SELECT DISTINCT ?interest {?person foaf:interest ?interest.  ?person a DUL:Person}" ;
+	owlunit:testsOntology foaf:, <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+```
+
+
 OWLunit is also able to run test cases CQ verification tests defined according to the [ODP's test annotation schema](http://www.ontologydesignpatterns.org/schemas/testannotationschema.owl) and [TESTaLOD ontology](https://github.com/TESTaLOD/TESTaLOD) as follows.
 
 
@@ -108,7 +122,7 @@ An executable JAR can be obtained from the [Releases](https://github.com/luigi-a
 The jar can be executed as follows:
 
 ```
-usage: java -jar OWLUnit-0.0.3.jar [ARGS]
+usage: java -jar OWLUnit-0.0.4.jar [ARGS]
  -c,--test-case <URI>    The URI of the test case to execute.
  -s,--test-suite <URI>   The URI of the test suite to execute.
 ```
