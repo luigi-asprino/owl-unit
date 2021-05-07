@@ -1,0 +1,9 @@
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+owlunittest:test9 a owlunit:CompetencyQuestionVerification .
+owlunittest:test9 owlunit:hasCompetencyQuestion "What are the interests of a certain person?" .
+owlunittest:test9 owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" .
+owlunittest:test9 owlunit:testsOntology foaf: .

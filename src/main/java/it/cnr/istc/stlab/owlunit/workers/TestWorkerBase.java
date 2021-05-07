@@ -92,26 +92,30 @@ public abstract class TestWorkerBase implements TestWorker {
 
 	protected OntModel getTestedOntology() throws OWLUnitException {
 
-		String ontologyURI = getTestedOntologyIRI();
-		if (ontologyURI == null) {
+		List<String> testedOntologyIRIs = getTestedOntologyIRIs();
+		if (testedOntologyIRIs == null || testedOntologyIRIs.isEmpty()) {
 			return null;
 		}
 
 		OntModel om = ModelFactory.createOntologyModel();
-		try {
-			RDFDataMgr.read(om, ontologyURI);
-		} catch (RiotException e) {
-			RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
+		for (String ontologyURI : testedOntologyIRIs) {
+			try {
+				RDFDataMgr.read(om, ontologyURI);
+			} catch (RiotException e) {
+				RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
+			}
 		}
-		
+
 		om.loadImports();
 
 		return om;
 	}
 
-	protected String getTestedOntologyIRI() throws OWLUnitException {
+	protected List<String> getTestedOntologyIRIs() throws OWLUnitException {
 		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 				model.getProperty(Constants.OWLUNIT_TESTSONTOLOGY));
+
+		List<String> result = new ArrayList<>();
 
 		if (!ni.hasNext()) {
 			ni = model.listObjectsOfProperty(model.getResource(testCaseIRI), OWL.imports);
@@ -121,7 +125,11 @@ public abstract class TestWorkerBase implements TestWorker {
 			return null;
 		}
 
-		return ni.next().asResource().getURI();
+		while (ni.hasNext()) {
+			result.add(ni.next().asResource().getURI());
+		}
+
+		return result;
 	}
 
 	protected String getExpectedResult() throws OWLUnitException {

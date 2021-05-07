@@ -1,5 +1,7 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.util.List;
+
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -36,80 +38,85 @@ public class InferenceVerificationTestExecutor extends TestWorkerBase {
 
 		loadTest();
 
-		String ontologyIRI = getTestedOntologyIRI();
-		logger.trace("Ontology IRI to test {}", ontologyIRI);
+		List<String> ontologyIRIs = getTestedOntologyIRIs();
+		logger.trace("Ontology IRI to test {}", ontologyIRIs);
 
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-		OWLOntology ontology;
+
 		try {
-			ontology = manager.loadOntology(IRI.create(ontologyIRI));
-		} catch (OWLOntologyCreationException e1) {
-			throw new OWLUnitException(e1.getMessage());
-		}
 
-		ontology.importsClosure().forEach(ont -> {
-			logger.trace("Importing " + ont.getOntologyID().getOntologyIRI().toString());
-			ontology.addAxioms(ont.axioms());
-		});
+			OWLOntology ontology = manager.createOntology();
 
-		logger.trace("Ontology axioms {}", ontology.axioms().count());
+			for (String ontologyIRI : ontologyIRIs) {
+				ontology.addAxioms(manager.loadOntology(IRI.create(ontologyIRI)).axioms());
+			}
 
-		String inputTestData = getInputTestData();
-		logger.trace("inputTestData: " + inputTestData);
+			ontology.importsClosure().forEach(ont -> {
+				logger.trace("Importing " + ont.getOntologyID().getOntologyIRI().toString());
+				ontology.addAxioms(ont.axioms());
+			});
 
-		if (inputTestData != null) {
-			logger.trace("Loading input data");
+			logger.trace("Ontology axioms {}", ontology.axioms().count());
+
+			String inputTestData = getInputTestData();
+			logger.trace("inputTestData: " + inputTestData);
+
+			if (inputTestData != null) {
+				logger.trace("Loading input data");
+				try {
+					OWLOntology toyDataset = manager.loadOntology(IRI.create(inputTestData));
+					toyDataset.importsClosure().forEach(ont -> {
+						logger.trace("Importing " + ont.getOntologyID().getOntologyIRI().toString());
+						ontology.addAxioms(ont.axioms());
+					});
+					logger.trace("Toy dataset axioms {}", toyDataset.axioms().count());
+					ontology.addAxioms(toyDataset.axioms());
+				} catch (OWLOntologyCreationException e) {
+					e.printStackTrace();
+				}
+				logger.trace("Ontology axioms {}", ontology.axioms().count());
+			}
+
+			OWLReasonerConfiguration config = new SimpleConfiguration();
+			OWLReasoner reasoner = new org.semanticweb.HermiT.ReasonerFactory().createReasoner(ontology, config);
+
+			OWLDataFactory factory = manager.getOWLDataFactory();
+			InferredOntologyGenerator gen = new InferredOntologyGenerator(reasoner);
+			OWLOntology newOntology;
+			boolean isConsistent = false;
 			try {
-				OWLOntology toyDataset = manager.loadOntology(IRI.create(inputTestData));
-				toyDataset.importsClosure().forEach(ont -> {
-					logger.trace("Importing " + ont.getOntologyID().getOntologyIRI().toString());
-					ontology.addAxioms(ont.axioms());
+				newOntology = manager.createOntology();
+				gen.fillOntology(factory, newOntology);
+				OntologyManager ontManager = OntManagers.createManager();
+				Ontology ontOntology = ontManager.copyOntology(newOntology, OntologyCopy.DEEP);
+				ontology.axioms().forEach(a -> {
+					ontOntology.addAxiom(a);
 				});
-				logger.trace("Toy dataset axioms {}", toyDataset.axioms().count());
-				ontology.addAxioms(toyDataset.axioms());
+				Model m = ((com.github.owlcs.ontapi.Ontology) ontOntology).asGraphModel();
+				Query sparqlQuery = getSPARQLQuery();
+				isConsistent = reasoner.isConsistent();
+				if (!isConsistent) {
+					return false;
+				}
+
+				if (sparqlQuery != null) {
+					logger.trace("SPARQL query: " + sparqlQuery.toString(Syntax.syntaxSPARQL_11));
+					QueryExecution qexec = QueryExecutionFactory.create(sparqlQuery, m);
+
+					String expectedResult = getExpectedResult();
+					logger.trace("Expected result: " + expectedResult);
+
+					return Boolean.parseBoolean(expectedResult) == qexec.execAsk();
+				}
 			} catch (OWLOntologyCreationException e) {
 				e.printStackTrace();
 			}
-			logger.trace("Ontology axioms {}", ontology.axioms().count());
+
+			return isConsistent;
+
+		} catch (OWLOntologyCreationException e1) {
+			throw new OWLUnitException(e1.getMessage());
 		}
-
-		OWLReasonerConfiguration config = new SimpleConfiguration();
-		OWLReasoner reasoner = new org.semanticweb.HermiT.ReasonerFactory().createReasoner(ontology, config);
-
-		OWLDataFactory factory = manager.getOWLDataFactory();
-		InferredOntologyGenerator gen = new InferredOntologyGenerator(reasoner);
-		OWLOntology newOntology;
-		boolean isConsistent = false;
-		try {
-			newOntology = manager.createOntology();
-			gen.fillOntology(factory, newOntology);
-			OntologyManager ontManager = OntManagers.createManager();
-			Ontology ontOntology = ontManager.copyOntology(newOntology, OntologyCopy.DEEP);
-			ontology.axioms().forEach(a -> {
-				ontOntology.addAxiom(a);
-			});
-			Model m = ((com.github.owlcs.ontapi.Ontology) ontOntology).asGraphModel();
-			Query sparqlQuery = getSPARQLQuery();
-			isConsistent = reasoner.isConsistent();
-			if (!isConsistent) {
-				return false;
-			}
-
-			if (sparqlQuery != null) {
-				logger.trace("SPARQL query: " + sparqlQuery.toString(Syntax.syntaxSPARQL_11));
-				QueryExecution qexec = QueryExecutionFactory.create(sparqlQuery, m);
-
-				String expectedResult = getExpectedResult();
-				logger.trace("Expected result: " + expectedResult);
-
-				return Boolean.parseBoolean(expectedResult) == qexec.execAsk();
-			}
-		} catch (OWLOntologyCreationException e) {
-			e.printStackTrace();
-		}
-
-		return isConsistent;
-
 	}
 
 }

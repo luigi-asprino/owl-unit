@@ -113,4 +113,17 @@ public class CQVerificationTest {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void test7() {
+		String URItest = "https://w3id.org/OWLunit/test/test9";
+		String fileIn = "src/main/resources/testResources/test9.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		cqve.setFileIn(fileIn);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
 }

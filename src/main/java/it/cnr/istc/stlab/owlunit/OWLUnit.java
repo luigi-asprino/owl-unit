@@ -64,7 +64,7 @@ public class OWLUnit {
 					}
 
 					if (tw.getClass().equals(InferenceVerificationTestExecutor.class)) {
-						System.out.print("Error Provocation test ");
+						System.out.print("Inference Verification test ");
 					}
 
 					if (tw.runTest()) {
@@ -83,7 +83,7 @@ public class OWLUnit {
 
 	private static void printOptions(Options options) {
 		HelpFormatter formatter = new HelpFormatter();
-		formatter.printHelp("java -jar OWLUnit-0.0.2.jar [ARGS]", options);
+		formatter.printHelp("java -jar OWLUnit-0.0.4.jar [ARGS]", options);
 	}
 
 }
