@@ -33,6 +33,7 @@ OWLunit makes sure that: 1. the IRI used within the SPARQL query are defined eit
 @prefix rs:   <http://www.w3.org/2001/sw/DataAccess/tests/result-set#> .
 @prefix ex: <https://w3id.org/OWLunit/examples/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
 ex:cq1_resultset.ttl a owlunit:CompetencyQuestionVerification ;
  	owlunit:hasCompetencyQuestion "What are the interests of a certain person?" ;
