@@ -108,7 +108,7 @@ An executable JAR can be obtained from the [Releases](https://github.com/luigi-a
 The jar can be executed as follows:
 
 ```
-usage: java -jar OWLUnit-0.0.2.jar [ARGS]
+usage: java -jar OWLUnit-0.0.3.jar [ARGS]
  -c,--test-case <URI>    The URI of the test case to execute.
  -s,--test-suite <URI>   The URI of the test suite to execute.
 ```
