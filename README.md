@@ -25,7 +25,32 @@ ex:cq1.ttl a owlunit:CompetencyQuestionVerification ;
 ```
 
 
-OWLunit makes sure that: 1. the IRI used within the SPARQL query are defined either in the tested ontology or in the input test data (if provided); 2. (if input data is provided) the result of the the SPARQL unit test query evaluated over the input data is isomorphic to the expected result.
+OWLunit makes sure that: 1. the IRI used within the SPARQL query are defined either in the tested ontology or in the input test data (if provided); 2. (if input data is provided) the result of the the SPARQL unit test query evaluated over the input data is isomorphic to the expected result. The expected result can be specified either as a JSON serialization (see [example above](https://w3id.org/OWLunit/examples/cq1.ttl)) of the result set of the query or according to the [this vocabulary](https://www.w3.org/2001/sw/DataAccess/tests/result-set#) (see [example below](https://w3id.org/OWLunit/examples/cq1_resultset.ttl)).
+
+
+```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix rs:   <http://www.w3.org/2001/sw/DataAccess/tests/result-set#> .
+@prefix ex: <https://w3id.org/OWLunit/examples/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:cq1_resultset.ttl a owlunit:CompetencyQuestionVerification ;
+ 	owlunit:hasCompetencyQuestion "What are the interests of a certain person?" ;
+ 	owlunit:hasSPARQLUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
+	owlunit:hasInputData ex:datacq1.ttl ;
+	owlunit:hasInputTestDataCategory owlunit:ToyDataset ;
+	owlunit:hasExpectedResult [ a                  rs:ResultSet ;
+					  rs:resultVariable  "interest" ;
+					  rs:size            "1"^^xsd:int ;
+					  rs:solution        [ rs:binding  [ rs:value     <https://w3id.org/OWLunit/examples/Basketball> ;
+									     rs:variable  "interest"
+									   ]
+							     ]
+					] ;
+	owlunit:testsOntology foaf: .
+
+```
+
 Moreover, you can also test multiple ontologies at a time.
 
 ```
