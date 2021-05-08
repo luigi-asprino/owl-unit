@@ -83,7 +83,7 @@ public class OWLUnit {
 
 	private static void printOptions(Options options) {
 		HelpFormatter formatter = new HelpFormatter();
-		formatter.printHelp("java -jar OWLUnit-0.0.4.jar [ARGS]", options);
+		formatter.printHelp("java -jar OWLUnit-<VERSION>.jar [ARGS]", options);
 	}
 
 }
