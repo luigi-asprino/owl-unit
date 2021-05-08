@@ -166,13 +166,13 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 		if (or == null) {
 			logger.trace("Couldn't find {}", r.getURI());
 
-			if(this.i==null)
+			if (this.i == null)
 				return false;
-			
+
 			switch (this.i) {
 			case SPARQL_ENDPOINT:
-				// TODO
-				break;
+				throw new UnsupportedOperationException(
+						"IRI verification in SPARQL endpoint not supported yet! " + inputTestData);
 			case TOY_DATASET:
 				return m.contains(r, null, null) || m.contains(null, r, null) || m.contains(null, null, r);
 			}
