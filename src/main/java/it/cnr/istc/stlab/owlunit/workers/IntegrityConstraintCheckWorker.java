@@ -41,8 +41,18 @@ public class IntegrityConstraintCheckWorker extends TestWorkerBase {
 			throw new OWLUnitException("Only ASK SPARQL query allowed");
 		}
 
-		boolean expectedResult = Boolean.parseBoolean(getExpectedResult());
-		logger.trace("Expected result: " + expectedResult);
+		
+//		Object expectedResult = getExpectedResult();
+//		logger.trace("Expected result: " + expectedResult);
+//
+//		if (expectedResult.getClass().equals(String.class)) {
+//			return Boolean.parseBoolean((String) expectedResult) == qexec.execAsk();
+//		} else {
+//			throw new OWLUnitException("Wrong type of the expected result! (Expected boolean)");
+//		}
+		
+//		boolean expectedResult = Boolean.parseBoolean(getExpectedResult());
+//		logger.trace("Expected result: " + expectedResult);
 
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(sparqlEndpointURI, sparqlQuery);
 

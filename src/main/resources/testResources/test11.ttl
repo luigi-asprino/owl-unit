@@ -1,0 +1,21 @@
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix testannotationschema: <http://www.ontologydesignpatterns.org/schemas/testannotationschema.owl#> .
+@prefix testalod: <https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#> .
+@prefix rs:   <http://www.w3.org/2001/sw/DataAccess/tests/result-set#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+
+owlunittest:test11  testannotationschema:hasCQ "What are the interests of a certain person?" ;
+ 	testannotationschema:hasSPARQLQueryUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interest ?interest}" ;
+	testalod:hasInputTestDataUri <data/test11.ttl> ;
+	testalod:hasInputTestDataCategory testalod:ToyDataset ;
+  testannotationschema:hasExpectedResult [ a                  rs:ResultSet ;
+					  rs:resultVariable  "interest" ;
+					  rs:size            "1"^^xsd:int ;
+					  rs:solution        [ rs:binding  [ rs:value     <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/Basketball_err> ;
+									     rs:variable  "interest"
+									   ]
+							     ]
+					] .

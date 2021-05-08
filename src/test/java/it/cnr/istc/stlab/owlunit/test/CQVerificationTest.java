@@ -100,7 +100,7 @@ public class CQVerificationTest {
 		}
 
 	}
-	
+
 	@Test
 	public void test6() {
 		String URItest = "https://w3id.org/OWLunit/test/test6";
@@ -113,7 +113,7 @@ public class CQVerificationTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void test7() {
 		String URItest = "https://w3id.org/OWLunit/test/test9";
@@ -122,6 +122,33 @@ public class CQVerificationTest {
 		cqve.setFileIn(fileIn);
 		try {
 			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void test10() {
+		String URItest = "https://w3id.org/OWLunit/test/test10";
+		String fileIn = "src/main/resources/testResources/test10.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		cqve.setFileIn(fileIn);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	public void test11() {
+		String URItest = "https://w3id.org/OWLunit/test/test11";
+		String fileIn = "src/main/resources/testResources/test11.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		cqve.setFileIn(fileIn);
+		try {
+			assertFalse(cqve.runTest());
 		} catch (OWLUnitException e) {
 			e.printStackTrace();
 		}

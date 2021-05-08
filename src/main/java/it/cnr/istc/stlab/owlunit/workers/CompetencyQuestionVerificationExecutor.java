@@ -6,12 +6,14 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.query.Syntax;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.sparql.resultset.RDFOutput;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,7 +52,8 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 		OntModel om = getTestedOntology();
 		if (om != null) {
-			QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(om,inputTestData,i);
+			QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(om,
+					inputTestData, i);
 			sparqlQuery.getQueryPattern().visit(qeviev);
 			if (!qeviev.getResult()) {
 				logger.trace("Could not find an IRI used in the SPARQL query");
@@ -78,8 +81,7 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 
 		if (i != null) {
 
-			String expectedResult = getExpectedResult().replaceAll("\\\\\"", "\"");
-			logger.trace("Expected result: " + expectedResult);
+			Object expectedResult = getExpectedResult();
 
 			if (inputTestData == null) {
 				throw new OWLUnitException("No data input declared!");
@@ -99,16 +101,30 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 				RDFDataMgr.read(m, inputTestData);
 				qexec = QueryExecutionFactory.create(sparqlQuery, m);
 			}
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			ResultSetFormatter.outputAsJSON(baos, qexec.execSelect());
+			if (expectedResult.getClass().equals(String.class)) {
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				ResultSetFormatter.outputAsJSON(baos, qexec.execSelect());
 
-			logger.trace("Actual " + baos.toString());
-			logger.trace("Expected " + expectedResult);
+				logger.trace("Actual " + baos.toString());
+				logger.trace("Expected " + expectedResult);
+				String expectedJSON = expectedResult.toString().replaceAll("\\\\\"", "\"");
+				JsonElement expected = JsonParser.parseString(expectedJSON);
+				JsonElement actual = JsonParser.parseString(baos.toString());
+				return expected.equals(actual);
+			} else if (Model.class.isAssignableFrom(expectedResult.getClass())) {
+				Model expectedModel = (Model) expectedResult;
+				ResultSet rs = qexec.execSelect();
+				Model actualModel = RDFOutput.encodeAsModel(rs);
+				if (logger.isTraceEnabled()) {
+					logger.trace("Expected: ");
+					expectedModel.write(System.out, "TTL");
 
-			JsonElement expected = JsonParser.parseString(expectedResult);
-			JsonElement actual = JsonParser.parseString(baos.toString());
-			return expected.equals(actual);
-
+					logger.trace("Actual: ");
+					actualModel.write(System.out, "TTL");
+				}
+				return expectedModel.isIsomorphicWith(actualModel);
+			}
+			throw new OWLUnitException("Couldn't execute query");
 		}
 		return true;
 	}

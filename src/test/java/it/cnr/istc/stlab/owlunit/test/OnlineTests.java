@@ -75,5 +75,16 @@ public class OnlineTests {
 		TestSuiteExecutor te = new TestSuiteExecutor(URItest);
 		assertEquals(3, te.runTestSuite());
 	}
+	
+	@Test
+	public void test7() {
+		String URItest = "https://w3id.org/OWLunit/examples/cq1_resultset.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

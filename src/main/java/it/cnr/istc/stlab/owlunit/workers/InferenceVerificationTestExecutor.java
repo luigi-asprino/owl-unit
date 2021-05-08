@@ -103,10 +103,15 @@ public class InferenceVerificationTestExecutor extends TestWorkerBase {
 					logger.trace("SPARQL query: " + sparqlQuery.toString(Syntax.syntaxSPARQL_11));
 					QueryExecution qexec = QueryExecutionFactory.create(sparqlQuery, m);
 
-					String expectedResult = getExpectedResult();
+					Object expectedResult = getExpectedResult();
 					logger.trace("Expected result: " + expectedResult);
 
-					return Boolean.parseBoolean(expectedResult) == qexec.execAsk();
+					if (expectedResult.getClass().equals(String.class)) {
+						return Boolean.parseBoolean((String) expectedResult) == qexec.execAsk();
+					} else {
+						throw new OWLUnitException("Wrong type of the expected result! (Expected boolean)");
+					}
+
 				}
 			} catch (OWLOntologyCreationException e) {
 				e.printStackTrace();

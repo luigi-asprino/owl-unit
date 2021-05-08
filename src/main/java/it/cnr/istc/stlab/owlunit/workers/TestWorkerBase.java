@@ -1,20 +1,26 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.apache.jena.graph.Graph;
+import org.apache.jena.graph.Node;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RiotException;
+import org.apache.jena.sparql.graph.GraphFactory;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import org.slf4j.Logger;
@@ -132,7 +138,7 @@ public abstract class TestWorkerBase implements TestWorker {
 		return result;
 	}
 
-	protected String getExpectedResult() throws OWLUnitException {
+	protected Object getExpectedResult() throws OWLUnitException {
 		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 				model.getProperty(Constants.TESTANNOTATIONSCHEMA_HASEXPECTEDRESULT));
 
@@ -145,7 +151,40 @@ public abstract class TestWorkerBase implements TestWorker {
 			throw new OWLUnitException("No expected result declared");
 		}
 
-		return ni.next().asLiteral().getString();
+		RDFNode n = ni.next();
+
+		if (n.isLiteral()) {
+			logger.trace("Expected result Is Literal");
+			return n.asLiteral().getString();
+		} else {
+			logger.trace("Expected result is not literal");
+			Graph g = GraphFactory.createGraphMem();
+
+			Graph g1 = model.getGraph();
+
+			Set<Node> nodeToExplore = new HashSet<>();
+			Set<Node> alreadyExplored = new HashSet<>();
+			nodeToExplore.add(n.asNode());
+			
+			
+			
+			while (!nodeToExplore.isEmpty()) {
+				Node nn = nodeToExplore.iterator().next();
+				nodeToExplore.remove(nn);
+				g1.find(nn, null, null).forEachRemaining(t -> {
+					g.add(t);
+					if (t.getObject().isURI() || t.getObject().isBlank()) {
+						if (!alreadyExplored.contains(t.getObject())) {
+							nodeToExplore.add(t.getObject());
+						}
+					}
+				});
+			}
+
+//			g1.find(n.asNode(), null, null)
+
+			return ModelFactory.createModelForGraph(g);
+		}
 
 	}
 
