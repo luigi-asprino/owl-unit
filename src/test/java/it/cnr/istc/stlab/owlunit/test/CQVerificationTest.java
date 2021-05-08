@@ -4,6 +4,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.apache.jena.fuseki.main.FusekiServer;
 import org.apache.jena.fuseki.main.FusekiServer.Builder;
 import org.apache.jena.query.Dataset;
@@ -126,7 +129,7 @@ public class CQVerificationTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void test10() {
 		String URItest = "https://w3id.org/OWLunit/test/test10";
@@ -139,8 +142,7 @@ public class CQVerificationTest {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	@Test
 	public void test11() {
 		String URItest = "https://w3id.org/OWLunit/test/test11";
@@ -149,6 +151,24 @@ public class CQVerificationTest {
 		cqve.setFileIn(fileIn);
 		try {
 			assertFalse(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void test12() {
+		String URItest = "https://w3id.org/OWLunit/test/test12";
+		String fileIn = "src/main/resources/testResources/test12.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		cqve.setFileIn(fileIn);
+		try {
+			ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+			PrintStream originalOut = System.out;
+			System.setOut(new PrintStream(outContent));
+			cqve.runTest();
+			assertTrue("URIs not found\nhttp://xmlns.com/foaf/0.1/interests\n".equals(outContent.toString()));
+			System.setOut(originalOut);
 		} catch (OWLUnitException e) {
 			e.printStackTrace();
 		}

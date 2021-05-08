@@ -1,0 +1,13 @@
+@prefix owlunittest: <https://w3id.org/OWLunit/test/> .
+@prefix ex: <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/examples/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix testannotationschema: <http://www.ontologydesignpatterns.org/schemas/testannotationschema.owl#> .
+@prefix testalod: <https://raw.githubusercontent.com/TESTaLOD/TESTaLOD/master/ontology/testalod.owl#> .
+@prefix rs:   <http://www.w3.org/2001/sw/DataAccess/tests/result-set#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+
+
+owlunittest:test12  testannotationschema:hasCQ "What are the interests of a certain person?" ;
+ 	testannotationschema:hasSPARQLQueryUnitTest "PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT DISTINCT ?interest {?person foaf:interests ?interest}" ;
+	owlunit:testsOntology foaf: .

@@ -1,5 +1,8 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.jena.graph.Graph;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.Triple;
@@ -40,6 +43,7 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 	private String inputTestData;
 	private static final Logger logger = LoggerFactory.getLogger(OWLUnit.class);
 	private Graph m;
+	private List<String> urisNotFound = new ArrayList<>();
 
 	public QueryElementVisitorIRIExistenceVerifier(OntModel o, String inputTestData, Input i) {
 		this.o = o;
@@ -51,6 +55,10 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 			RDFDataMgr.read(m, inputTestData);
 		}
 
+	}
+	
+	public List<String> getURIsNotFound(){
+		return urisNotFound;
 	}
 
 	public boolean getResult() {
@@ -145,9 +153,17 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 	public void visit(ElementPathBlock el) {
 		el.getPattern().getList().forEach(tp -> {
 			Triple t = tp.asTriple();
-			if (!isDefinedInTheOntology(t.getSubject()) || !isDefinedInTheOntology(t.getPredicate())
-					|| !isDefinedInTheOntology(t.getObject())) {
+			if (!isDefinedInTheOntology(t.getSubject())) {
 				result = false;
+				urisNotFound.add(t.getSubject().getURI());
+			}
+			if (!isDefinedInTheOntology(t.getPredicate())) {
+				result = false;
+				urisNotFound.add(t.getPredicate().getURI());
+			}
+			if (!isDefinedInTheOntology(t.getObject())) {
+				result = false;
+				urisNotFound.add(t.getObject().getURI());
 			}
 		});
 	}
@@ -191,7 +207,6 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 
 	@Override
 	public void visit(ElementFind el) {
-		// TODO Auto-generated method stub
 
 	}
 

@@ -57,6 +57,12 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 			sparqlQuery.getQueryPattern().visit(qeviev);
 			if (!qeviev.getResult()) {
 				logger.trace("Could not find an IRI used in the SPARQL query");
+				
+				System.out.println("URIs not found");
+				qeviev.getURIsNotFound().forEach(s->{
+					System.out.println(s);
+				});
+				
 				return false;
 			}
 //			QueryElementVisitorPrototyper qevp = new QueryElementVisitorPrototyper();
