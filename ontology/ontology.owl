@@ -1,12 +1,41 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/OWLunit/ontology/"
      xml:base="https://w3id.org/OWLunit/ontology/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://w3id.org/OWLunit/ontology/"/>
+    <owl:Ontology rdf:about="https://w3id.org/OWLunit/ontology/">
+        <dc:description rdf:resource="https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/ontology/owlunitontology.png"/>
+        <dc:description xml:lang="en">This ontology provides a vocabulary for defining test cases for ontologies.</dc:description>
+        <dc:title xml:lang="en">OWL Unit Ontology</dc:title>
+        <owl:versionInfo>0.2.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -75,6 +104,16 @@
         <rdfs:domain rdf:resource="https://w3id.org/OWLunit/ontology/TestCase"/>
         <rdfs:range rdf:resource="https://w3id.org/OWLunit/ontology/Reasoner"/>
         <rdfs:label xml:lang="en">has reasoner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/OWLunit/ontology/hasShapes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/OWLunit/ontology/hasShapes">
+        <rdfs:domain rdf:resource="https://w3id.org/OWLunit/ontology/AnnotationVerification"/>
+        <rdfs:comment xml:lang="en">It links an annotation verification test case with the shapes to be used to assess the annotations of the ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">has shapes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -152,6 +191,16 @@
     <!-- http://www.w3.org/2002/07/owl#Ontology -->
 
     <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Ontology"/>
+    
+
+
+    <!-- https://w3id.org/OWLunit/ontology/AnnotationVerification -->
+
+    <owl:Class rdf:about="https://w3id.org/OWLunit/ontology/AnnotationVerification">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/OWLunit/ontology/TestCase"/>
+        <rdfs:comment xml:lang="en">Annotation Verification tests aim at assessing the annotations of ontology entities. Constraints on annotations can be specified using SHACL.</rdfs:comment>
+        <rdfs:label xml:lang="en">Annotation Verification</rdfs:label>
+    </owl:Class>
     
 
 
