@@ -4,6 +4,14 @@ OWLunit allows you to run unit tests for ontologies defined according to the [OW
 
 OWLunit runs three kinds of test cases: Competency Question Verification, Inference Verification, Error Provocation Verification.
 
+### Annotation Verification
+
+Annotation verification tests aim at assessing the annotations (e.g. labels, comments) associated with ontology entities.
+
+A test case of this kind can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
+```
+```
+
 ### Competency Question Verification
 
 The Competency Question (CQ) Verification  consists in testing whether the ontology vocabulary allows to convert a CQ, reflecting an ontology requirement, to a SPARQL query.

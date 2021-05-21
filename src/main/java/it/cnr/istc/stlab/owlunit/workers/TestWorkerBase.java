@@ -97,6 +97,10 @@ public abstract class TestWorkerBase implements TestWorker {
 	}
 
 	protected OntModel getTestedOntology() throws OWLUnitException {
+		return getTestedOntology(true);
+	}
+
+	protected OntModel getTestedOntology(boolean loadimport) throws OWLUnitException {
 
 		List<String> testedOntologyIRIs = getTestedOntologyIRIs();
 		if (testedOntologyIRIs == null || testedOntologyIRIs.isEmpty()) {
@@ -112,12 +116,42 @@ public abstract class TestWorkerBase implements TestWorker {
 			}
 		}
 
-		om.loadImports();
+		if (loadimport) {
+			om.loadImports();
+		}
+
+		logger.trace("Tested ontology size {}", om.size());
+
+		return om;
+	}
+	
+	protected Model getTestedOntologyAsModel() throws OWLUnitException {
+
+		List<String> testedOntologyIRIs = getTestedOntologyIRIs();
+		if (testedOntologyIRIs == null || testedOntologyIRIs.isEmpty()) {
+			return null;
+		}
+
+		Model om = ModelFactory.createDefaultModel();
+		for (String ontologyURI : testedOntologyIRIs) {
+			try {
+				RDFDataMgr.read(om, ontologyURI);
+			} catch (RiotException e) {
+				RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
+			}
+		}
+
+		logger.trace("Tested ontology size {}", om.size());
 
 		return om;
 	}
 
 	protected List<String> getTestedOntologyIRIs() throws OWLUnitException {
+
+		if (logger.isTraceEnabled()) {
+			model.write(System.out, "TTL");
+		}
+
 		NodeIterator ni = model.listObjectsOfProperty(model.getResource(testCaseIRI),
 				model.getProperty(Constants.OWLUNIT_TESTSONTOLOGY));
 
@@ -128,12 +162,15 @@ public abstract class TestWorkerBase implements TestWorker {
 		}
 
 		if (!ni.hasNext()) {
+			logger.trace("Return null");
 			return null;
 		}
 
 		while (ni.hasNext()) {
 			result.add(ni.next().asResource().getURI());
 		}
+
+		logger.trace("Tested ontology iris {}", result);
 
 		return result;
 	}
@@ -165,9 +202,7 @@ public abstract class TestWorkerBase implements TestWorker {
 			Set<Node> nodeToExplore = new HashSet<>();
 			Set<Node> alreadyExplored = new HashSet<>();
 			nodeToExplore.add(n.asNode());
-			
-			
-			
+
 			while (!nodeToExplore.isEmpty()) {
 				Node nn = nodeToExplore.iterator().next();
 				nodeToExplore.remove(nn);
