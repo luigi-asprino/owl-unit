@@ -29,7 +29,7 @@ public class AnnotationVerificationTest {
 		at.setFileIn("src/main/resources/testResources/annotationVerification/test2.ttl");
 		
 		try {
-			assertFalse(at.runTest());
+			assertTrue(at.runTest());
 		} catch (OWLUnitException e) {
 			e.printStackTrace();
 		}
