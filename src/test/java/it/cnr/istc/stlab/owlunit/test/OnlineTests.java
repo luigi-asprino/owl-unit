@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import it.cnr.istc.stlab.owlunit.workers.AnnotationVerificationExecutor;
 import it.cnr.istc.stlab.owlunit.workers.CompetencyQuestionVerificationExecutor;
 import it.cnr.istc.stlab.owlunit.workers.ErrorProvocationTestExecutor;
 import it.cnr.istc.stlab.owlunit.workers.InferenceVerificationTestExecutor;
@@ -80,6 +81,17 @@ public class OnlineTests {
 	public void test7() {
 		String URItest = "https://w3id.org/OWLunit/examples/cq1_resultset.ttl";
 		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void test8() {
+		String URItest = "https://w3id.org/OWLunit/examples/annotationverification.ttl";
+		AnnotationVerificationExecutor cqve = new AnnotationVerificationExecutor(URItest);
 		try {
 			assertTrue(cqve.runTest());
 		} catch (OWLUnitException e) {

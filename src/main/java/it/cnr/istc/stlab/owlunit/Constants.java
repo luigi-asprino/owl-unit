@@ -26,5 +26,6 @@ public class Constants {
 	public static final String CQVERIFICATION = OWLUNIT_ONTOLOGY_PREFIX + "CompetencyQuestionVerification";
 	public static final String INFERENCEVERIFICATION = OWLUNIT_ONTOLOGY_PREFIX + "InferenceVerification";
 	public static final String ERRORPROVOCATION = OWLUNIT_ONTOLOGY_PREFIX + "ErrorProvocation";
+	public static final String ANNOTATIONVERIFICATION = OWLUNIT_ONTOLOGY_PREFIX + "AnnotationVerification";
 
 }

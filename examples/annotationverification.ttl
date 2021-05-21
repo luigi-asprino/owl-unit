@@ -6,4 +6,4 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 ex:annotationverification.ttl a owlunit:AnnotationVerification ;
-	owlunit:testsOntology owlunit: .
+	owlunit:testsOntology <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/ontology/ontology.owl> .

@@ -124,7 +124,7 @@ public abstract class TestWorkerBase implements TestWorker {
 
 		return om;
 	}
-	
+
 	protected Model getTestedOntologyAsModel() throws OWLUnitException {
 
 		List<String> testedOntologyIRIs = getTestedOntologyIRIs();
@@ -249,7 +249,11 @@ public abstract class TestWorkerBase implements TestWorker {
 		} else if (klass.getURI().equals(Constants.INFERENCEVERIFICATION)) {
 			InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(iriTestCase.getURI());
 			return te;
+		} else if (klass.getURI().equals(Constants.ANNOTATIONVERIFICATION)) {
+			AnnotationVerificationExecutor te = new AnnotationVerificationExecutor(iriTestCase.getURI());
+			return te;
 		}
+
 		throw new OWLUnitException("Unrecognized test case! class: " + klass.getURI());
 	}
 
