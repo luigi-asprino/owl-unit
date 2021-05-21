@@ -9,7 +9,13 @@ OWLunit runs three kinds of test cases: Competency Question Verification, Infere
 Annotation verification tests aim at assessing the annotations (e.g. labels, comments) associated with ontology entities.
 
 A test case of this kind can be specified according to the [OWLUnit Ontology](https://w3id.org/owlunit/ontology) as follows
+
 ```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix ex: <https://w3id.org/OWLunit/examples/> .
+
+ex:annotationverification.ttl a owlunit:AnnotationVerification ;
+	owlunit:testsOntology owlunit: .
 ```
 
 ### Competency Question Verification

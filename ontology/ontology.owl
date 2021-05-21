@@ -35,7 +35,9 @@
 
     <!-- http://purl.org/dc/elements/1.1/title -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
+        <rdfs:label>title</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
@@ -281,6 +283,7 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/OWLunit/ontology/TestCase"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>A test run keeps the results of an execution of a test case.</rdfs:comment>
         <rdfs:label xml:lang="en">Test Run</rdfs:label>
     </owl:Class>
     

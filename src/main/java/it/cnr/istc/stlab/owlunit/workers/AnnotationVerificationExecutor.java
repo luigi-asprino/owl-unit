@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
-import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFNode;
@@ -55,6 +55,10 @@ public class AnnotationVerificationExecutor extends TestWorkerBase {
 
 //		testedOntology.write(System.out);
 
+//		System.out.println(testedOntology.getNsPrefixMap());
+
+		String basePrefix = testedOntology.getNsPrefixMap().get("");
+
 		Resource validationResult = ValidationUtil.validateModel(testedOntology, shapes, false);
 		Model reportModel = validationResult.getModel();
 
@@ -63,17 +67,26 @@ public class AnnotationVerificationExecutor extends TestWorkerBase {
 		String q = "PREFIX sh: <http://www.w3.org/ns/shacl#> SELECT DISTINCT ?node ?message ?severity { "
 				+ " ?vr a sh:ValidationResult . " + " ?vr sh:focusNode ?node . " + " ?vr sh:resultSeverity ?severity ."
 				+ " ?vr sh:resultMessage ?message . }";
-		QueryExecution qexec = QueryExecutionFactory.create(q, validationResult.getModel());
+		QueryExecution qexec = QueryExecutionFactory.create(q, reportModel);
 
 		ResultSet rs = qexec.execSelect();
+		boolean conforms = true;
+		System.out.println("Report");
+		while (rs.hasNext()) {
+			QuerySolution qs = (QuerySolution) rs.next();
 
-		if (rs.hasNext()) {
-			System.out.println("Report");
-			System.out.println(ResultSetFormatter.asText(rs));
+			String targetNode = qs.get("node").asResource().getURI();
+			String message = qs.get("message").asLiteral().getValue().toString();
+			String severity = qs.get("severity").asResource().getLocalName();
+			if (targetNode.startsWith(basePrefix)) {
+				System.out.println(String.format("%s:[target: %s] %s", severity, targetNode, message));
+				if (severity.equals("Violation")) {
+					conforms = false;
+				}
+			}
+
 		}
-
-		return validationResult.getProperty(reportModel.getProperty("http://www.w3.org/ns/shacl#conforms")).getObject()
-				.asLiteral().getBoolean();
+		return conforms;
 	}
 
 }
