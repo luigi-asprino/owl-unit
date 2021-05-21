@@ -159,11 +159,14 @@ OWLunit is able to run test cases grouped in test suites.
 ex:suite1.ttl a owlunit:TestSuite ;
 	owlunit:hasTestCase ex:cq1-testalod.ttl ;
 	owlunit:hasTestCase ex:iv.ttl ;
+	owlunit:hasTestCase ex:annotationverification.ttl ;
 	owlunit:hasTestCase ex:ep.ttl  .
 
 ex:cq1-testalod.ttl  a owlunit:CompetencyQuestionVerification .
 ex:iv.ttl a owlunit:InferenceVerification .
 ex:ep.ttl  a owlunit:ErrorProvocation .
+ex:annotationverification.ttl a owlunit:AnnotationVerification .
+
 
 ```
 
@@ -174,7 +177,7 @@ An executable JAR can be obtained from the [Releases](https://github.com/luigi-a
 The jar can be executed as follows:
 
 ```
-usage: java -jar OWLUnit-0.0.4.jar [ARGS]
+usage: java -jar OWLUnit-<VERSION>.jar [ARGS]
  -c,--test-case <URI>    The URI of the test case to execute.
  -s,--test-suite <URI>   The URI of the test suite to execute.
 ```

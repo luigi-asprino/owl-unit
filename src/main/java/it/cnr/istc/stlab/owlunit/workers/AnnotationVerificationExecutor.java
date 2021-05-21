@@ -71,7 +71,7 @@ public class AnnotationVerificationExecutor extends TestWorkerBase {
 
 		ResultSet rs = qexec.execSelect();
 		boolean conforms = true;
-		System.out.println("Report");
+		System.out.println("Annotation Verification Report:");
 		while (rs.hasNext()) {
 			QuerySolution qs = (QuerySolution) rs.next();
 

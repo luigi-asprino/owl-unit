@@ -76,6 +76,9 @@ public class TestSuiteExecutor {
 		} else if (klass.getURI().equals(Constants.INFERENCEVERIFICATION)) {
 			InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(iriTestCase.getURI());
 			return te.runTest();
+		}else if (klass.getURI().equals(Constants.ANNOTATIONVERIFICATION)) {
+			AnnotationVerificationExecutor te = new AnnotationVerificationExecutor(iriTestCase.getURI());
+			return te.runTest();
 		}
 		throw new OWLUnitException("Unrecognized test case! class: " + klass.getURI());
 	}

@@ -74,7 +74,7 @@ public class OnlineTests {
 	public void test5() {
 		String URItest = "https://w3id.org/OWLunit/examples/suite1.ttl";
 		TestSuiteExecutor te = new TestSuiteExecutor(URItest);
-		assertEquals(3, te.runTestSuite());
+		assertEquals(4, te.runTestSuite());
 	}
 	
 	@Test
