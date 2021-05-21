@@ -18,6 +18,18 @@ ex:annotationverification.ttl a owlunit:AnnotationVerification ;
 	owlunit:testsOntology owlunit: .
 ```
 
+OWLUnit verifies that the tested ontology complies with its [default ontology shape](https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/shapes/ontology.ttl).
+Alternatively you can define your own shape and specify it by using the ``owlunit:hasShapes`` property.
+
+```
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
+@prefix ex: <https://w3id.org/OWLunit/examples/> .
+
+ex:annotationverification.ttl a owlunit:AnnotationVerification ;
+	owlunit:hasShapes <https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/shapes/ontology.ttl> ; 
+	owlunit:testsOntology owlunit: .
+```
+
 ### Competency Question Verification
 
 The Competency Question (CQ) Verification  consists in testing whether the ontology vocabulary allows to convert a CQ, reflecting an ontology requirement, to a SPARQL query.
