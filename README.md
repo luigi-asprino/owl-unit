@@ -19,7 +19,7 @@ ex:annotationverification.ttl a owlunit:AnnotationVerification ;
 ```
 
 OWLUnit verifies that the tested ontology complies with its [default ontology shape](https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/shapes/ontology.ttl).
-Alternatively you can define your own shape and specify it by using the ``owlunit:hasShapes`` property.
+Alternatively, you can define your own shape and specify it by using the ``owlunit:hasShapes`` property.
 
 ```
 @prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
