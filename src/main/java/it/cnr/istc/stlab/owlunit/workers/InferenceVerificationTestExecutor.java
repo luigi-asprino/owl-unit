@@ -7,6 +7,7 @@ import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.Syntax;
 import org.apache.jena.rdf.model.Model;
+import org.semanticweb.HermiT.Configuration;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -77,8 +78,12 @@ public class InferenceVerificationTestExecutor extends TestWorkerBase {
 				logger.trace("Ontology axioms {}", ontology.axioms().count());
 			}
 
-			OWLReasonerConfiguration config = new SimpleConfiguration();
-			OWLReasoner reasoner = new org.semanticweb.HermiT.ReasonerFactory().createReasoner(ontology, config);
+//			OWLReasonerConfiguration config = new SimpleConfiguration();
+			
+			Configuration c = new Configuration();
+			c.ignoreUnsupportedDatatypes = true;
+			
+			OWLReasoner reasoner = new org.semanticweb.HermiT.ReasonerFactory().createReasoner(ontology, c);
 
 			OWLDataFactory factory = manager.getOWLDataFactory();
 			InferredOntologyGenerator gen = new InferredOntologyGenerator(reasoner);

@@ -22,4 +22,18 @@ public class InferenceVerificationTest {
 		}
 	}
 	
+	
+	@Test
+	public void testMC() {
+		String URItest = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv1.ttl";
+		String fileIn = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv1.ttl";
+		try {
+			InferenceVerificationTestExecutor tc = new InferenceVerificationTestExecutor(URItest);
+			tc.setFileIn(fileIn);
+			assertTrue(tc.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
