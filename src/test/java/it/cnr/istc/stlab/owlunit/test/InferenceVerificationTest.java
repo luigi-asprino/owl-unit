@@ -2,6 +2,7 @@ package it.cnr.istc.stlab.owlunit.test;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import it.cnr.istc.stlab.owlunit.workers.InferenceVerificationTestExecutor;
@@ -21,12 +22,12 @@ public class InferenceVerificationTest {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+	@Ignore
 	@Test
 	public void testMC() {
-		String URItest = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv1.ttl";
-		String fileIn = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv1.ttl";
+		String URItest = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv2.ttl";
+		String fileIn = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv2.ttl";
 		try {
 			InferenceVerificationTestExecutor tc = new InferenceVerificationTestExecutor(URItest);
 			tc.setFileIn(fileIn);
@@ -35,5 +36,5 @@ public class InferenceVerificationTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
