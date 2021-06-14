@@ -178,8 +178,15 @@ The jar can be executed as follows:
 
 ```
 usage: java -jar OWLUnit-<VERSION>.jar [ARGS]
- -c,--test-case <URI>    The URI of the test case to execute.
- -s,--test-suite <URI>   The URI of the test suite to execute.
+ -c,--test-case <URI>                          The URI of the test case to
+                                               execute.
+ -m,--iri-mappings <A list of pairs of IRIs>   A list of pairs IRIs
+                                               separated by a white space.
+                                               The first IRI of the pair
+                                               will be resolved on the
+                                               second of the pair.
+ -s,--test-suite <URI>                         The URI of the test suite
+                                               to execute.
 ```
 
 ## License
