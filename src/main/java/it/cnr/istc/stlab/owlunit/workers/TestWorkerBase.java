@@ -23,6 +23,7 @@ import org.apache.jena.riot.RiotException;
 import org.apache.jena.sparql.graph.GraphFactory;
 import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
+import org.semanticweb.owlapi.model.OWLOntologyIRIMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +34,7 @@ public abstract class TestWorkerBase implements TestWorker {
 	protected String testCaseIRI;
 	protected Model model = ModelFactory.createDefaultModel();
 	protected String fileIn;
+	protected List<OWLOntologyIRIMapper> mappers = new ArrayList<>();
 
 	private Logger logger = LoggerFactory.getLogger(TestWorkerBase.class);
 
@@ -48,6 +50,14 @@ public abstract class TestWorkerBase implements TestWorker {
 			logger.trace("Loaded using path {}", fileIn);
 			RDFDataMgr.read(model, fileIn);
 		}
+	}
+
+	public void addMapper(OWLOntologyIRIMapper mapper) {
+		this.mappers.add(mapper);
+	}
+
+	public void setMappers(List<OWLOntologyIRIMapper> mappers) {
+		this.mappers = mappers;
 	}
 
 	public String getInputTestData() throws OWLUnitException {
@@ -223,7 +233,8 @@ public abstract class TestWorkerBase implements TestWorker {
 
 	}
 
-	public static List<TestWorker> guessTestClass(String iri) throws OWLUnitException {
+	public static List<TestWorker> guessTestClass(String iri, List<OWLOntologyIRIMapper> mappers)
+			throws OWLUnitException {
 		Model model = ModelFactory.createDefaultModel();
 		RDFDataMgr.read(model, iri);
 
@@ -232,25 +243,30 @@ public abstract class TestWorkerBase implements TestWorker {
 		StmtIterator it2 = model.getResource(iri).listProperties(RDF.type);
 		while (it2.hasNext()) {
 			Statement s2 = (Statement) it2.next();
-			result.add(getTest(s2.getSubject().asResource(), s2.getObject().asResource()));
+			result.add(getTest(s2.getSubject().asResource(), s2.getObject().asResource(), mappers));
 		}
 
 		return result;
 	}
 
-	private static TestWorker getTest(Resource iriTestCase, Resource klass) throws OWLUnitException {
+	private static TestWorker getTest(Resource iriTestCase, Resource klass, List<OWLOntologyIRIMapper> mappers)
+			throws OWLUnitException {
 		if (klass.getURI().equals(Constants.CQVERIFICATION)) {
 			CompetencyQuestionVerificationExecutor cqtw = new CompetencyQuestionVerificationExecutor(
 					iriTestCase.getURI());
+			cqtw.setMappers(mappers);
 			return cqtw;
 		} else if (klass.getURI().equals(Constants.ERRORPROVOCATION)) {
 			ErrorProvocationTestExecutor cqtw = new ErrorProvocationTestExecutor(iriTestCase.getURI());
+			cqtw.setMappers(mappers);
 			return cqtw;
 		} else if (klass.getURI().equals(Constants.INFERENCEVERIFICATION)) {
 			InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(iriTestCase.getURI());
+			te.setMappers(mappers);
 			return te;
 		} else if (klass.getURI().equals(Constants.ANNOTATIONVERIFICATION)) {
 			AnnotationVerificationExecutor te = new AnnotationVerificationExecutor(iriTestCase.getURI());
+			te.setMappers(mappers);
 			return te;
 		}
 

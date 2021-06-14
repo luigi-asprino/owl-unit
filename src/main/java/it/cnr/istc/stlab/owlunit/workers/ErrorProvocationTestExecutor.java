@@ -1,5 +1,6 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,9 +32,11 @@ public class ErrorProvocationTestExecutor extends TestWorkerBase {
 		logger.trace("Ontology IRI to test {}", ontologyIRIs);
 
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+		manager.setIRIMappers(new HashSet<>(super.mappers));
+		
 		try {
 			OWLOntology ontology = manager.createOntology();
-			
+
 			for (String ontologyIRI : ontologyIRIs) {
 				ontology.addAxioms(manager.loadOntology(IRI.create(ontologyIRI)).axioms());
 			}

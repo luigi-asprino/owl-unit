@@ -1,5 +1,6 @@
 package it.cnr.istc.stlab.owlunit.workers;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.apache.jena.query.Query;
@@ -13,11 +14,10 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyIRIMapper;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.parameters.OntologyCopy;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
-import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
 import org.semanticweb.owlapi.util.InferredOntologyGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,9 +43,9 @@ public class InferenceVerificationTestExecutor extends TestWorkerBase {
 		logger.trace("Ontology IRI to test {}", ontologyIRIs);
 
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+		manager.setIRIMappers(new HashSet<OWLOntologyIRIMapper>(super.mappers));
 
 		try {
-
 			OWLOntology ontology = manager.createOntology();
 
 			for (String ontologyIRI : ontologyIRIs) {
@@ -79,10 +79,10 @@ public class InferenceVerificationTestExecutor extends TestWorkerBase {
 			}
 
 //			OWLReasonerConfiguration config = new SimpleConfiguration();
-			
+
 			Configuration c = new Configuration();
 			c.ignoreUnsupportedDatatypes = true;
-			
+
 			OWLReasoner reasoner = new org.semanticweb.HermiT.ReasonerFactory().createReasoner(ontology, c);
 
 			OWLDataFactory factory = manager.getOWLDataFactory();

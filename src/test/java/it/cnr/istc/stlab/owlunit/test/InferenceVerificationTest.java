@@ -4,6 +4,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.util.SimpleIRIMapper;
 
 import it.cnr.istc.stlab.owlunit.workers.InferenceVerificationTestExecutor;
 import it.cnr.istc.stlab.owlunit.workers.OWLUnitException;
@@ -30,6 +32,10 @@ public class InferenceVerificationTest {
 		String fileIn = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/test/iv2.ttl";
 		try {
 			InferenceVerificationTestExecutor tc = new InferenceVerificationTestExecutor(URItest);
+			tc.addMapper(new SimpleIRIMapper(IRI.create("https://w3id.org/arco/ontology/context-description/1.3"), IRI
+					.create("https://raw.githubusercontent.com/ICCD-MiBACT/ArCo/DEV-1.3.0/ArCo-release/ontologie/context-description/1.3/context-description.owl")));
+			tc.addMapper(new SimpleIRIMapper(IRI.create("https://w3id.org/arco/ontology/core/1.3"), IRI.create(
+					"https://raw.githubusercontent.com/ICCD-MiBACT/ArCo/DEV-1.3.0/ArCo-release/ontologie/core/1.3/core.owl")));
 			tc.setFileIn(fileIn);
 			assertTrue(tc.runTest());
 		} catch (OWLUnitException e) {
