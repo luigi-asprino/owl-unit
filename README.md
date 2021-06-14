@@ -1,8 +1,8 @@
 # OWLunit
 
-OWLunit allows you to run unit tests for ontologies defined according to the [OWLUnit Ontology](https://w3id.org/OWLunit/ontology/0.0.2). OWLunit is also able too run test cases defined by using [ODP's test annotation schema](http://www.ontologydesignpatterns.org/schemas/testannotationschema.owl) and [TESTaLOD](https://github.com/TESTaLOD/TESTaLOD).
+OWLunit allows you to run unit tests for ontologies defined according to the [OWLUnit Ontology](https://w3id.org/OWLunit/ontology/). OWLunit is also able too run test cases defined by using [ODP's test annotation schema](http://www.ontologydesignpatterns.org/schemas/testannotationschema.owl) and [TESTaLOD](https://github.com/TESTaLOD/TESTaLOD).
 
-OWLunit runs three kinds of test cases: Competency Question Verification, Inference Verification, Error Provocation Verification.
+OWLunit runs four kinds of test cases: Annotation Verification, Competency Question Verification, Inference Verification and Error Provocation Verification.
 
 ### Annotation Verification
 
@@ -19,7 +19,7 @@ ex:annotationverification.ttl a owlunit:AnnotationVerification ;
 ```
 
 OWLUnit verifies that the tested ontology complies with its [default ontology shape](https://raw.githubusercontent.com/luigi-asprino/owl-unit/main/shapes/ontology.ttl).
-Alternatively you can define your own shape and specify it by using the ``owlunit:hasShapes`` property.
+Alternatively, you can define your own shape and specify it by using the ``owlunit:hasShapes`` property.
 
 ```
 @prefix owlunit: <https://w3id.org/OWLunit/ontology/> .
