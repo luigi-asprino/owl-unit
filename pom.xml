@@ -5,7 +5,7 @@
 
 	<groupId>it.cnr.istc.stlab</groupId>
 	<artifactId>owl.unit</artifactId>
-	<version>0.3.1</version>
+	<version>0.3.2</version>
 	<packaging>jar</packaging>
 
 
