@@ -180,6 +180,10 @@ The jar can be executed as follows:
 usage: java -jar OWLUnit-<VERSION>.jar [ARGS]
  -c,--test-case <URI>                          The URI of the test case to
                                                execute.
+ -f,--filepath <path>                          The filepath leading to the
+                                               file defining the test case
+                                               or test suite to be
+                                               executed.
  -m,--iri-mappings <A list of pairs of IRIs>   A list of pairs IRIs
                                                separated by a white space.
                                                The first IRI of the pair

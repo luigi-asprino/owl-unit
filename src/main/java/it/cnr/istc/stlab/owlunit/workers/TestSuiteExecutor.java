@@ -21,19 +21,26 @@ public class TestSuiteExecutor {
 
 	private String iri;
 
+	private String filepath;
+
 	public TestSuiteExecutor(String iri) {
 		this.iri = iri;
 	}
 
+	public void setFileIn(String path) {
+		this.filepath = path;
+	}
+
 	public int runTestSuite() {
 		Model m = ModelFactory.createDefaultModel();
-		String location = iri;
+
+		String location = filepath == null ? iri : filepath;
 
 		logger.trace("Location {}", location);
 
 		RDFDataMgr.read(m, location);
 		logger.trace("IRI Executor model size {}", m.size());
-		StmtIterator it = m.listStatements(m.getResource(location), m.getProperty(Constants.HASTESTCASE),
+		StmtIterator it = m.listStatements(m.getResource(iri), m.getProperty(Constants.HASTESTCASE),
 				(RDFNode) null);
 //		logger.trace("Number of test cases {}", it.toModel().size());
 //		m.write(System.out, "NT");
@@ -76,7 +83,7 @@ public class TestSuiteExecutor {
 		} else if (klass.getURI().equals(Constants.INFERENCEVERIFICATION)) {
 			InferenceVerificationTestExecutor te = new InferenceVerificationTestExecutor(iriTestCase.getURI());
 			return te.runTest();
-		}else if (klass.getURI().equals(Constants.ANNOTATIONVERIFICATION)) {
+		} else if (klass.getURI().equals(Constants.ANNOTATIONVERIFICATION)) {
 			AnnotationVerificationExecutor te = new AnnotationVerificationExecutor(iriTestCase.getURI());
 			return te.runTest();
 		}

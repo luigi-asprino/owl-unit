@@ -114,6 +114,7 @@ public class CompetencyQuestionVerificationExecutor extends TestWorkerBase {
 				logger.trace("Actual " + baos.toString());
 				logger.trace("Expected " + expectedResult);
 				String expectedJSON = expectedResult.toString().replaceAll("\\\\\"", "\"");
+				logger.trace("Expected clean " + expectedJSON);
 				JsonElement expected = JsonParser.parseString(expectedJSON);
 				JsonElement actual = JsonParser.parseString(baos.toString());
 				return expected.equals(actual);

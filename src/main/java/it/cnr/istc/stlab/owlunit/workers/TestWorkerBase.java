@@ -101,6 +101,8 @@ public abstract class TestWorkerBase implements TestWorker {
 
 		String sparqlQuery = ni.next().asLiteral().getString();
 
+		logger.trace("SPARQL query {}", sparqlQuery);
+
 		Query q = QueryFactory.create(sparqlQuery);
 
 		return q;
@@ -233,10 +235,10 @@ public abstract class TestWorkerBase implements TestWorker {
 
 	}
 
-	public static List<TestWorker> guessTestClass(String iri, List<OWLOntologyIRIMapper> mappers)
+	public static List<TestWorker> guessTestClass(String iri, String uriTest, List<OWLOntologyIRIMapper> mappers)
 			throws OWLUnitException {
 		Model model = ModelFactory.createDefaultModel();
-		RDFDataMgr.read(model, iri);
+		RDFDataMgr.read(model, uriTest);
 
 		List<TestWorker> result = new ArrayList<>();
 

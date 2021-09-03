@@ -29,6 +29,7 @@ public class OWLUnit {
 	private static final String TEST_SUITE = "s";
 	private static final String TEST_CASE = "c";
 	private static final String IRI_MAPPING = "m";
+	private static final String FILE = "f";
 	private static final Logger logger = LoggerFactory.getLogger(OWLUnit.class);
 
 	public static void main(String[] args) throws OWLUnitException {
@@ -40,6 +41,10 @@ public class OWLUnit {
 
 		options.addOption(Option.builder(TEST_CASE).argName("URI").hasArg().required(false)
 				.desc("The URI of the test case to execute.").longOpt("test-case").build());
+
+		options.addOption(Option.builder(FILE).argName("path").hasArg().required(false)
+				.desc("The filepath leading to the file defining the test case or test suite to be executed.")
+				.longOpt("filepath").build());
 
 		Option o = Option.builder(IRI_MAPPING).argName("A list of pairs of IRIs").required(false).desc(
 				"A list of pairs IRIs separated by a white space. The first IRI of the pair will be resolved on the second of the pair.")
@@ -71,13 +76,33 @@ public class OWLUnit {
 				logger.info("Test suite URI {}", commandLine.getOptionValue(TEST_SUITE));
 
 				TestSuiteExecutor tse = new TestSuiteExecutor(commandLine.getOptionValue(TEST_SUITE));
+
+				if (commandLine.hasOption(FILE)) {
+					tse.setFileIn(commandLine.getOptionValue(FILE));
+				}
+
 				tse.runTestSuite();
+
 			}
 
 			if (commandLine.hasOption(TEST_CASE)) {
 				logger.info("Test case URI {}", commandLine.getOptionValue(TEST_CASE));
 
-				for (TestWorker tw : TestWorkerBase.guessTestClass(commandLine.getOptionValue(TEST_CASE), mappers)) {
+				List<TestWorker> workers;
+
+				if (commandLine.hasOption(FILE)) {
+					workers = TestWorkerBase.guessTestClass(commandLine.getOptionValue(TEST_CASE),
+							commandLine.getOptionValue(FILE), mappers);
+				} else {
+					workers = TestWorkerBase.guessTestClass(commandLine.getOptionValue(TEST_CASE),
+							commandLine.getOptionValue(TEST_CASE), mappers);
+				}
+
+				if (workers.size() == 0) {
+					logger.info("{} doesn't define any test case.", commandLine.getOptionValue(TEST_CASE));
+				}
+
+				for (TestWorker tw : workers) {
 					if (tw.getClass().equals(CompetencyQuestionVerificationExecutor.class)) {
 						System.out.print("CQ Verification test ");
 					}
@@ -88,6 +113,10 @@ public class OWLUnit {
 
 					if (tw.getClass().equals(InferenceVerificationTestExecutor.class)) {
 						System.out.print("Inference Verification test ");
+					}
+
+					if (commandLine.hasOption(FILE)) {
+						tw.setFileIn(commandLine.getOptionValue(FILE));
 					}
 
 					if (tw.runTest()) {
