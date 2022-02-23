@@ -122,6 +122,7 @@ public abstract class TestWorkerBase implements TestWorker {
 		OntModel om = ModelFactory.createOntologyModel();
 		for (String ontologyURI : testedOntologyIRIs) {
 			try {
+				logger.trace("Reading {}", ontologyURI);
 				RDFDataMgr.read(om, ontologyURI);
 			} catch (RiotException e) {
 				RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
