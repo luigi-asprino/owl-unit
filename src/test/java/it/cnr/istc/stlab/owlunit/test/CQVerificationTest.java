@@ -12,7 +12,6 @@ import org.apache.jena.fuseki.main.FusekiServer.Builder;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.DatasetFactory;
 import org.apache.jena.riot.RDFDataMgr;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import it.cnr.istc.stlab.owlunit.workers.CompetencyQuestionVerificationExecutor;
@@ -175,17 +174,4 @@ public class CQVerificationTest {
 		}
 	}
 
-	@Ignore
-	@Test
-	public void remoteTest() {
-		String URItest = "https://raw.githubusercontent.com/mchiaraf/owl-unit-tests/main/modellazioni_trasversali/authorship/CQ/cq4.ttl";
-		
-		
-		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
-		try {
-			System.out.println(cqve.runTest());
-		} catch (OWLUnitException e) {
-			e.printStackTrace();
-		}
-	}
 }

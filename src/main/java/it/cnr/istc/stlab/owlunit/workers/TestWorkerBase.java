@@ -125,7 +125,12 @@ public abstract class TestWorkerBase implements TestWorker {
 				logger.trace("Reading {}", ontologyURI);
 				RDFDataMgr.read(om, ontologyURI);
 			} catch (RiotException e) {
-				RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
+				try {
+					RDFDataMgr.read(om, ontologyURI, Lang.RDFXML);
+				} catch (RiotException e1) {
+					throw new OWLUnitException(
+							String.format("Syntax error found in ontology %s: %s", ontologyURI, e1.getMessage()));
+				}
 			}
 		}
 
