@@ -29,10 +29,11 @@ public class OWLUnit {
 	private static final String TEST_SUITE = "s";
 	private static final String TEST_CASE = "c";
 	private static final String IRI_MAPPING = "m";
+	private static final String VERBOSE = "v";
 	private static final String FILE = "f";
 	private static final Logger logger = LoggerFactory.getLogger(OWLUnit.class);
 
-	public static void main(String[] args) throws OWLUnitException {
+	public static void main(String[] args) {
 
 		Options options = new Options();
 
@@ -46,6 +47,9 @@ public class OWLUnit {
 				.desc("The filepath leading to the file defining the test case or test suite to be executed.")
 				.longOpt("filepath").build());
 
+		options.addOption(
+				Option.builder(VERBOSE).required(false).desc("Activate verbose mode.").longOpt("verbose").build());
+
 		Option o = Option.builder(IRI_MAPPING).argName("A list of pairs of IRIs").required(false).desc(
 				"A list of pairs IRIs separated by a white space. The first IRI of the pair will be resolved on the second of the pair.")
 				.longOpt("iri-mappings").build();
@@ -58,9 +62,13 @@ public class OWLUnit {
 		CommandLineParser cmdLineParser = new DefaultParser();
 		try {
 			commandLine = cmdLineParser.parse(options, args);
-
+			
 			if (!commandLine.hasOption(TEST_SUITE) && !commandLine.hasOption(TEST_CASE)) {
 				printOptions(options);
+			}
+			
+			if(commandLine.hasOption(VERBOSE)) {
+//				LoggerFactory.getLogger("it.cnr.istc.stlab").ro
 			}
 
 			List<OWLOntologyIRIMapper> mappers = new ArrayList<>();
@@ -130,6 +138,8 @@ public class OWLUnit {
 
 		} catch (ParseException e) {
 			printOptions(options);
+		} catch (OWLUnitException e) {
+			System.err.println(e.getMessage());
 		}
 	}
 

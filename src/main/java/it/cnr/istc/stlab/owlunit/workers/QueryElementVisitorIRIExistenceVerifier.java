@@ -55,13 +55,9 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 		}
 
 	}
-	
-	public List<String> getURIsNotFound(){
-		return urisNotFound;
-	}
 
-	public boolean getResult() {
-		return result;
+	public List<String> getURIsNotFound() {
+		return urisNotFound;
 	}
 
 	@Override
@@ -155,14 +151,17 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 			if (!isDefinedInTheOntology(t.getSubject())) {
 				result = false;
 				urisNotFound.add(t.getSubject().getURI());
+				logger.trace("Couldn't object {}", t.getSubject());
 			}
 			if (!isDefinedInTheOntology(t.getPredicate())) {
 				result = false;
 				urisNotFound.add(t.getPredicate().getURI());
+				logger.trace("Couldn't object {}", t.getPredicate());
 			}
 			if (!isDefinedInTheOntology(t.getObject())) {
 				result = false;
 				urisNotFound.add(t.getObject().getURI());
+				logger.trace("Couldn't object {}", t.getObject());
 			}
 		});
 	}
@@ -181,15 +180,20 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 		if (or == null) {
 			logger.trace("Couldn't find {}", r.getURI());
 
-			if (this.i == null)
+			if (this.i == null) {
+				logger.trace("Returning false");
 				return false;
+			}
 
 			switch (this.i) {
 			case SPARQL_ENDPOINT:
 				throw new UnsupportedOperationException(
 						"IRI verification in SPARQL endpoint not supported yet! " + inputTestData);
 			case TOY_DATASET:
-				return m.contains(r, null, null) || m.contains(null, r, null) || m.contains(null, null, r);
+				boolean isIriInTheToyDataset = m.contains(r, null, null) || m.contains(null, r, null)
+						|| m.contains(null, null, r);
+				logger.trace("Is IRI in the Toy Dataset {}", isIriInTheToyDataset);
+				return isIriInTheToyDataset;
 			}
 			return false;
 
@@ -203,6 +207,5 @@ public class QueryElementVisitorIRIExistenceVerifier implements ElementVisitor {
 		// Ignored
 
 	}
-
 
 }

@@ -98,5 +98,16 @@ public class OnlineTests {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void test9() {
+		String URItest = "https://raw.githubusercontent.com/mariasanvill/PopMusic/main/test/cq1.ttl";
+		CompetencyQuestionVerificationExecutor cqve = new CompetencyQuestionVerificationExecutor(URItest);
+		try {
+			assertTrue(cqve.runTest());
+		} catch (OWLUnitException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

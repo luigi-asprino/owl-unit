@@ -21,7 +21,7 @@ public class TestQueryIRIExistenceVerifier {
 		QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(o,null,null);
 		Query q = QueryFactory.create("SELECT * {?s a <" + TEST_PREFIX + "c> }");
 		q.getQueryPattern().visit(qeviev);
-		assertTrue(qeviev.getResult());
+		assertTrue(qeviev.hasResult());
 	}
 	
 	@Test
@@ -31,7 +31,7 @@ public class TestQueryIRIExistenceVerifier {
 		QueryElementVisitorIRIExistenceVerifier qeviev = new QueryElementVisitorIRIExistenceVerifier(o, null,null);
 		Query q = QueryFactory.create("SELECT * {?s a <" + TEST_PREFIX + "d> }");
 		q.getQueryPattern().visit(qeviev);
-		System.out.println(qeviev.getResult());
-		assertTrue(!qeviev.getResult());
+		System.out.println(qeviev.hasResult());
+		assertTrue(!qeviev.hasResult());
 	}
 }
