@@ -1,5 +1,5 @@
 @prefix ex: <https://w3id.org/OWLunit/examples/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 
-ex:i a dul:Situation .
-ex:i a dul:Event .
+ex:i a dul:PhysicalObject .
+ex:i a dul:SocialObject .
